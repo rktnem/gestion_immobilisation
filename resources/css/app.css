@@ -11,6 +11,17 @@ body {
     color: var(--black);
 }
 
+ul {
+    list-style-type: none;
+}
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+a:visited {
+    color: var(--black);
+}
+
 input[type="text"] {
     padding: 7px;
     border-style: solid;

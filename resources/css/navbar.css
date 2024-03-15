@@ -1,0 +1,6 @@
+.navbar {
+    background-color: red;
+}
+.navbar ul {
+    display: flex;
+}

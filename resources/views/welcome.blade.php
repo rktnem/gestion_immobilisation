@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
 
-    <title>Laravel</title>
+<h1>Initialization des styles du projet</h1>
 
-    <!-- Fonts -->
-
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
-</head>
-
-<body>
-    <h1>Initialization des styles du projet</h1>
-</body>
-
-</html>
+@endsection

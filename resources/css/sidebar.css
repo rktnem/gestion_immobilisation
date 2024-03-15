@@ -1,0 +1,45 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary);
+    height: 100vh;
+    width: 250px;
+    overflow: scroll;
+}
+.sidebar::-webkit-scrollbar {
+    width: 0;
+}
+.sidebar .logo {
+    padding: 25px 0 15px 0;
+    text-align: center;
+}
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.sidebar ul li a svg {
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar .item-list {
+    padding-left: 15px;
+}
+.sidebar .item-list a {
+    font-size: 14px;
+    opacity: 70%;
+    transition: 0.2s ease-in-out;
+}
+.sidebar .item-list a:hover {
+    opacity: 1;
+}
+
+.active {
+    background-color: var(--side-active);
+}
