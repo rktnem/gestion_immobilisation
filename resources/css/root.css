@@ -1,0 +1,11 @@
+:root {
+    --primary: #E56133; /* C'est le couleur initiale, c'est l'orange */
+    --second: #24BDE0; /* C'est le couleur secondaire, c'est le bleu */
+    --black: #1C1B1A; /* C'est le noir initiale qu'on utilisera au lieu de black */
+    --background: #E8E8E8; /* C'est le fond initiale en gris */
+    --breadcrumbs-active: #004DBC; /* C'est l'effet active du breadcrumbs, c'est le bleu */
+    --border-color: #8b8b8b; /* C'est le couleur du bordure de notre input */
+    --border-weight: 0.5px; /* C'est l'epaisseur du bordure de notre input */
+    --border-radius: 7px; /* Le border radius generale pour la plus part des elements */
+    --owner-list-background: #DDDDDD; /* Le fond de la liste des detenteurs dans la liste des matières */
+}

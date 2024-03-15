@@ -8,11 +8,13 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
 </head>
+
 <body>
-    <h1>Hello World !</h1>
+    <h1>Initialization des styles du projet</h1>
 </body>
 
 </html>
