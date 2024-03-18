@@ -11,6 +11,8 @@
 
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
+    @vite('resources/js/jquery.js')
+    @vite('resources/js/script.js')
 </head>
 
 <body>

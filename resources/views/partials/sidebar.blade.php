@@ -4,7 +4,7 @@
     <div class="logo">FTM</div>
     <ul>
         <li class="side-item">
-            <a href="#" class="active">
+            <a href="#">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="52" height="52">
                         <path
@@ -17,7 +17,7 @@
         </li>
         <li class="side-item">
             <div class="main-item">
-                <a href="#">
+                <a href="#" class="main-active">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="item-list">
-                <a href="#">
+                <a href="#" class="item-active">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
                             <path

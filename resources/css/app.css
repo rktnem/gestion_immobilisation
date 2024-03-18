@@ -9,6 +9,13 @@
 
 body {
     color: var(--black);
+    background-color: var(--background);
+}
+
+.content-section {
+    width: 100%;
+    margin-left: 250px;
+    transition: margin .3s linear;
 }
 
 ul {
@@ -22,14 +29,14 @@ a:visited {
     color: var(--black);
 }
 
-input[type="text"] {
-    padding: 7px;
+input[type="text"], input[type="number"], select {
+    padding: 6px;
     border-style: solid;
     border-color: var(--border-color);
     border-width: var(--border-weight);
     border-radius: var(--border-radius);
 }
-input[type="text"]:focus {
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
     outline: var(--border-weight) solid var(--primary);
     border-color: var(--primary);
 }
