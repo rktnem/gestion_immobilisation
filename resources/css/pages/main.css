@@ -1,0 +1,64 @@
+.main-content {    
+    margin: 50px 25px 0 25px;
+}
+
+.main-fonction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--border-radius);
+}
+
+.main-fonction h1 {
+    font-size: 26px;
+    margin-top: 50px;
+}
+.main-fonction p {
+    margin-top: 20px;
+}
+.main-fonction form {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+.main-fonction form input[type="number"] {
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+.main-fonction form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: var(--second);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.menu-section {
+    margin-top: 75px;
+}
+.menu-section ul{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+.menu-section .menu-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 45px 60px 10px 60px;
+}
+.menu-section .menu-item svg {
+    width: 50px;
+}
+.menu-section .menu-item span:first-child {
+    padding-bottom: 20px;
+}
+.menu-section .menu-item span:last-child {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: bold;
+}

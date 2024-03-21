@@ -1,4 +1,4 @@
-@vite('resources/css/navbar.css')
+@vite('resources/css/partials/navbar.css')
 
 <nav class="navbar">
     <ul>

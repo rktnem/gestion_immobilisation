@@ -1,4 +1,4 @@
-@vite('resources/css/sidebar.css')
+@vite('resources/css/partials/sidebar.css')
 
 <nav class="sidebar">
     <div class="logo">FTM</div>
