@@ -24,6 +24,7 @@
                         </svg>
                     </span>
                     <span>Etat financier</span>
+                    <div></div>
                 </a>
             </li>
             <li class="menu-item">
@@ -36,6 +37,7 @@
                         </svg>
                     </span>
                     <span>Inventaire</span>
+                    <div></div>
                 </a>
             </li>
             <li class="menu-item">
@@ -48,6 +50,7 @@
                         </svg>
                     </span>
                     <span>Rapport</span>
+                    <div></div>
                 </a>
             </li>
             <li class="menu-item">
@@ -60,6 +63,7 @@
                         </svg>
                     </span>
                     <span>Detenteurs</span>
+                    <div></div>
                 </a>
             </li>
         </ul>

@@ -1,5 +1,6 @@
 @import url(./root.css);
 
+/* Remise a zero des styles par defaut */
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +13,14 @@ body {
     background-color: var(--background);
 }
 
+/* Le style de contenues des differents fenetre */
 .content-section {
     width: 100%;
     margin-left: 250px;
     transition: margin .3s linear;
 }
 
+/* Definition de preferences des styles des attributs */
 ul {
     list-style-type: none;
 }
@@ -49,4 +52,18 @@ tr {
 }
 td {
     padding: 5px;
+}
+/* Fin de la definition */
+
+/* Le style du breadcrumbs pour toutes l'application */
+.breadcrumbs a:hover {
+    color: var(--breadcrumbs-active);
+}
+.breadcrumbs-active {
+    color: var(--breadcrumbs-active);
+    font-weight: bold;
+}
+.breadcrumbs a::after {
+    content: " /";
+    font-size: 19px;
 }

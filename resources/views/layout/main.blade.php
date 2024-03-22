@@ -14,6 +14,7 @@
     @vite('resources/js/jquery.js')
     @vite('resources/js/script.js')
     @vite('resources/css/pages/main.css')
+    @vite('resources/css/pages/displayImmo.css')
 </head>
 
 <body>
