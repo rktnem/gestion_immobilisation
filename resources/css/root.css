@@ -9,4 +9,5 @@
     --border-weight: 0.5px; /* C'est l'epaisseur du bordure de notre input */
     --border-radius: 7px; /* Le border radius generale pour la plus part des elements */
     --owner-list-background: #DDDDDD; /* Le fond de la liste des detenteurs dans la liste des matières */
+    --row-hover: #EFEFEF; /* Le hover effect lorsqu'on survole le ligne d'un tableau */
 }
