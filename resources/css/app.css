@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'FreeSans';
+    font-family: 'Roboto';
 }
 
 body {
@@ -52,7 +52,7 @@ tr {
     border-bottom: var(--border-weight) solid var(--border-color);
     cursor: pointer;
 }
-tr:hover {
+tr:hover:not(:first-child) {
     background-color: var(--row-hover);
 }
 th {
@@ -73,6 +73,9 @@ td, th {
 /* Pour centrer le texte ou non */
 .center {
     text-align: center;
+}
+.left {
+    text-align: left;
 }
 /* Fin de la definition */
 

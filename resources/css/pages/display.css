@@ -1,0 +1,27 @@
+.display-immobilisation, .display-ammortissement {
+    background-color: white;
+    margin: 30px 20px;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+}
+
+.display-immobilisation > nav, .display-ammortissement > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.display-ammortissement > .display-content > .rubrique{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    padding: 7px;
+}
+.display-ammortissement > .display-content tr:last-child {
+    font-weight: bold;
+}

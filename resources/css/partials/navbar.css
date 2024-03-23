@@ -80,6 +80,7 @@
 
 .nav-active {
     background-color: var(--primary);
+    border-radius: var(--border-radius);
 }
 .nav-active > a {
     color: white;
