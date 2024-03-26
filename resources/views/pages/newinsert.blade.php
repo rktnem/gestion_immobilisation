@@ -2,6 +2,6 @@
 
 @section('content')
 
-@include('type/don')
+@include('pages/type/achat')
 
 @endsection
