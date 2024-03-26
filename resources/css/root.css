@@ -1,6 +1,7 @@
 :root {
     --primary: #E56133; /* C'est le couleur initiale, c'est l'orange */
     --second: #24BDE0; /* C'est le couleur secondaire, c'est le bleu */
+    --second-hover: #0f819a; /* Le couleur de l'effet hover des boutons */
     --black: #000000; /* C'est le noir initiale qu'on utilisera au lieu de black */
     --background: #E8E8E8; /* C'est le fond initiale en gris */
     --side-active: #EF8A6F; /* C'est le fond utiliser lorsqu'un item du side est active */

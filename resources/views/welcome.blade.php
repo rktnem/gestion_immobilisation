@@ -8,7 +8,11 @@
         <p>De nouveaux acquis, veuillez donc donner le nombre d'immobilisation à inscrire en tant que propriété de FTM
         </p>
         <form action="" method="POST">
-            <input type="number"><br>
+            <select name="typeEntree" id="">
+                <option value="">Titre honnereux</option>
+                <option value="">Titre de don</option>
+                <option value="">Titre de transfert</option>
+            </select>
             <input type="submit" value="INSCRIRE">
         </form>
     </div>

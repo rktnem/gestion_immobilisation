@@ -14,7 +14,9 @@
     </nav>
     <div class="display-content">
         <div class="detail-part">
-            <h3>Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne</h3>
+            <div>
+                <h3>Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne</h3>
+            </div>
             <div>
                 <p><strong>Nomenclature:</strong> classe <strong>2</strong></p>
                 <p><strong>Mode d'acquisition:</strong> titre honnereux</p>
