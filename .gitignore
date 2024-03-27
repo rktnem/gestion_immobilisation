@@ -15,3 +15,7 @@
 # /.fleet
 # /.idea
 # /.vscode
+
+.settings
+.buildpath
+.project
