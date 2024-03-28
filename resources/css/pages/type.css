@@ -128,3 +128,24 @@
 .form-lot label {
     margin-right: 15px;
 }
+.achat-section .save-part .validation-list {
+    width: 75%;
+    margin: 0 auto;
+}
+.achat-section .save-part .validation-list .validation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(213, 243, 243);
+    
+    padding: 25px 50px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+}
+.achat-section .save-part .validation-list .validation-item h4 {
+    margin-bottom: 20px;
+}
+.achat-section .save-part .validation-list .validation-item p {
+    font-size: 14px;
+}
+

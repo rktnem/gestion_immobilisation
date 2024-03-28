@@ -1,6 +1,6 @@
 @vite('resources/css/partials/navbar.css')
 
-<nav class="navbar">
+<nav class="navbar" id="navbar">
     <ul>
         <div class="menu">
             <span class="side-visible">

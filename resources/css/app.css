@@ -106,3 +106,26 @@ td, th {
     content: " /";
     font-size: 19px;
 }
+
+/* Le bouton to Top */
+.to-top{
+    position: fixed;
+    bottom: 40px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+.to-top:hover {
+    background-color: #a63e18;
+}
+.to-top a {
+    color: white;
+    font-size: 25px;
+}

@@ -25,11 +25,14 @@
 </head>
 
 <body>
-    <div style="display: flex">
+    <div style="display: flex; position: relative;">
         <aside>@include('../partials/sidebar')</aside>
         <div class="content-section">
             @include('../partials/navbar')
             @yield('content')
+        </div>
+        <div class="to-top">
+            <a href="#navbar">&uarr;</a>
         </div>
     </div>
 </body>
