@@ -34,7 +34,7 @@ a:visited {
 }
 
 input[type="text"], input[type="number"], select {
-    padding: 6px;
+    padding: 10px 5px 10px 10px;
     border-style: solid;
     border-color: var(--border-color);
     border-width: var(--border-weight);
@@ -43,6 +43,15 @@ input[type="text"], input[type="number"], select {
 input[type="text"]:focus, input[type="number"]:focus, select:focus {
     outline: var(--border-weight) solid var(--primary);
     border-color: var(--primary);
+}
+input[type="submit"] {
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--second);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
 }
 
 table {
@@ -71,9 +80,6 @@ td {
 }
 td, th {
     padding: 15px 0;
-}
-button:hover {
-    background-color: red;
 }
 /* Pour centrer le texte ou non */
 .center {

@@ -78,7 +78,53 @@
 .current-item ~ .step-item .label {
     opacity: 0.5;
 }
-
 .current-item ~ .step-item::after {
     opacity: .2;
+}
+
+.achat-section .save-part {
+    margin-top: 50px;
+}
+.achat-section .save-part label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 450;
+}
+.achat-section .save-part h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.achat-section .save-part .form {
+    display: flex;
+    justify-content: center;
+}
+.achat-section .save-part .form-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.form-general, .form-lot {
+    padding: 15px 60px;
+}
+.form-general .form-group,
+.form-lot .form-group {
+    margin-bottom: 35px;
+}
+.form-general {
+    border-right: 1px solid #bcbcbc;
+}
+.form-general .form-group input,
+.form-general .form-group label{
+    display: block;
+}
+.form-lot .form-group{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.form-lot h4 {
+    margin-bottom: 15px;
+}
+.form-lot label {
+    margin-right: 15px;
 }
