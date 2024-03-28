@@ -82,6 +82,8 @@
     opacity: .2;
 }
 
+
+
 .achat-section .save-part {
     margin-top: 50px;
 }
@@ -128,6 +130,9 @@
 .form-lot label {
     margin-right: 15px;
 }
+
+
+
 .achat-section .save-part .validation-list {
     width: 75%;
     margin: 0 auto;
@@ -137,7 +142,6 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgb(213, 243, 243);
-    
     padding: 25px 50px;
     border-radius: var(--border-radius);
     margin-bottom: 25px;
@@ -149,3 +153,54 @@
     font-size: 14px;
 }
 
+
+
+.achat-section .save-part .detail-matiere,
+.achat-section .save-part .detail-detenteur {
+    margin-bottom: 25px;
+}
+.achat-section .save-part .detail-matiere h3,
+.achat-section .save-part .detail-detenteur h3{
+    text-align: left;
+}
+.achat-section .save-part .insertion-part > div:last-child{
+    display: flex;
+    justify-content: center;
+}
+.achat-section .save-part .detail-matiere .matiere-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px 20px;
+}
+.achat-section .save-part .detail-matiere .form-group input,
+.achat-section .save-part .detail-matiere .form-group label {
+    display: block;
+}
+.achat-section .save-part .detenteur-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 755px;
+    margin: 0 auto;
+}
+.achat-section .save-part .detenteur-form button {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    padding: 5px 10px;
+}
+.achat-section .save-part .detenteur-form button:hover {
+    background-color: var(--second-hover);
+}
+.achat-section .save-part .detenteur-form button svg {
+    width: 25px;
+}
+.achat-section .save-part .detenteur-form .detenteur-legend,
+.achat-section .save-part .detenteur-form .detenteur-input {
+    display: grid;
+    grid-template-columns: 70px 400px 85px 100px;
+    gap: 25px;
+    margin-bottom: 20px;
+}

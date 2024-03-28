@@ -27,31 +27,4 @@
             <input type="submit" value="VALIDER">
         </div>
     </div>
-    <div class="validation-item">
-        <div>
-            <h4>En attente de validation de mme Milou</h4>
-            <p><strong><u>Objet :</u></strong> Acquisition et livraison de materiel informatique repartit en 3 lots</p>
-        </div>
-        <div>
-            <input type="submit" value="VALIDER">
-        </div>
-    </div>
-    <div class="validation-item">
-        <div>
-            <h4>En attente de validation de mme Milou</h4>
-            <p><strong><u>Objet :</u></strong> Acquisition et livraison de materiel informatique repartit en 3 lots</p>
-        </div>
-        <div>
-            <input type="submit" value="VALIDER">
-        </div>
-    </div>
-    <div class="validation-item">
-        <div>
-            <h4>En attente de validation de mme Milou</h4>
-            <p><strong><u>Objet :</u></strong> Acquisition et livraison de materiel informatique repartit en 3 lots</p>
-        </div>
-        <div>
-            <input type="submit" value="VALIDER">
-        </div>
-    </div>
 </form>

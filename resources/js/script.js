@@ -42,3 +42,20 @@ number.on("keypress", (e) => {
     }
     form = "";
 })
+
+// Pour le form detenteur de la partie insertion de matiere
+
+let btnDetenteur = $('.detail-detenteur .detenteur-form button');
+let detenteurTable = $('.detail-detenteur .detenteur-form');
+let ref = 2;
+
+function formDetenteur(lot) {
+    return '<div class="detenteur-input"><input type="text" name="matricule-'+lot+'" id=""><input type="text" name="nom-detenteur-'+lot+'" id=""><input type="text" name="quantite-'+lot+'" id=""><input type="text" name="etat-'+lot+'" id=""></div>'
+}
+
+btnDetenteur.on('click', (e) => {
+    e.preventDefault();
+    detenteurTable.append(formDetenteur(ref));
+    ref += 1;
+})
+
