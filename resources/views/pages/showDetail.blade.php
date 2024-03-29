@@ -11,6 +11,9 @@
                 <span class="breadcrumbs-active">Matiere n°1</span>
             </a>
         </div>
+        <div class="searchbar">
+            <input type="text" name="" id="" placeholder="Rechercher...">
+        </div>
     </nav>
     <div class="display-content">
         <div class="detail-part">
