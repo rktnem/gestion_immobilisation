@@ -4,7 +4,7 @@
     <div class="logo">FTM</div>
     <ul>
         <li class="side-item">
-            <a href="#">
+            <a href={{ route('home') }} class="main-{{ isRoute('/home/i', $route) }}">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="52" height="52">
                         <path
@@ -17,7 +17,7 @@
         </li>
         <li class="side-item">
             <div class="main-item">
-                <a href="#" class="main-active">
+                <a href={{ route('inventaire.show') }} class="main-{{ isRoute('/inventaire/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="item-list">
-                <a href="#" class="item-active">
+                <a href={{ route('inventaire.show') }} class="item-{{ isRoute('/liste des matiere/i', $uri) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
                             <path
@@ -39,7 +39,7 @@
                     </span>
                     <span>Listes des matières</span>
                 </a>
-                <a href="#">
+                <a href={{ route('inventaire.journal') }} class="item-{{ isRoute('/inventaire.journal/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
@@ -67,12 +67,12 @@
                                 fill="#FFFFFF" />
                         </svg>
                     </span>
-                    <span>Sans détenteurs</span>
+                    <span>En attente</span>
                 </a>
             </div>
         </li>
         <li class="side-item">
-            <a href="#">
+            <a href={{ route('displayAmmortissement') }} class="main-{{ isRoute('/ammortissement/i', $route) }}">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                         <path
@@ -85,7 +85,7 @@
         </li>
         <li class="side-item">
             <div class="main-item">
-                <a href="#">
+                <a href="#" class="main-{{ isRoute('/rapport/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
@@ -121,7 +121,7 @@
         </li>
         <li class="side-item">
             <div class="main-item">
-                <a href="#">
+                <a href={{ route('owner.show') }} class="main-{{ isRoute('/owner/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
@@ -133,7 +133,7 @@
                 </a>
             </div>
             <div class="item-list">
-                <a href="#">
+                <a href={{ route('owner.show') }} class="item-{{ isRoute('/owner/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path

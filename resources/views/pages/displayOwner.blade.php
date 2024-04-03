@@ -80,7 +80,7 @@
                         <td>255 875</td>
                         <td><span class="name">Rakotondramanantsoa </span>Sarobidiniaina Nehemia</td>
                         <td>25 356 200,20 Ar</td>
-                        <td>5</td>
+                        <td>5 matiere</td>
                         <td>
                             <button>
                                 <span>

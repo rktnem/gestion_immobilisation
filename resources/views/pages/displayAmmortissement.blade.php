@@ -19,12 +19,12 @@
         <table>
             <tr>
                 <th>Designation</th>
-                <th>Date <br>d'acquis...</th>
+                <th>Date <br>d'acquisition</th>
                 <th>Valeur <br>d'acquisition</th>
-                <th>Taux <br>d'ammorti...</th>
-                <th>Ammorti... <br>anterieur</th>
+                <th>Taux <br>d'ammortissement</th>
+                <th>Ammortissement <br>anterieur</th>
                 <th>Dotation de <br>l'exercice</th>
-                <th>Totaux des <br>amorti...</th>
+                <th>Totaux des <br>amortissement</th>
                 <th>Valeur nette <br>comptable</th>
             </tr>
             <tr>
@@ -33,7 +33,7 @@
                 </td>
                 <td>Test lesy ty eee</td>
                 <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
+                <td>10%</td>
                 <td>Test lesy ty eee</td>
                 <td>Test lesy ty eee</td>
                 <td>Test lesy ty eee</td>
@@ -46,7 +46,7 @@
                 <td></td>
                 <td>Test lesy ty eee</td>
                 <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
+                <td>10%</td>
                 <td>Test lesy ty eee</td>
                 <td>Test lesy ty eee</td>
                 <td>Test lesy ty eee</td>

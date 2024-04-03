@@ -19,11 +19,44 @@
             </span>
         </div>
         <div>
-            <li class="nav-item"><a href="#">Liste des matières</a></li>
-            <li class="nav-item"><a href="#">Liste des matières</a></li>
-            <li class="nav-item"><a href="#">Liste des matières</a></li>
-            <li class="nav-item"><a href="#">Liste des matières</a></li>
-            <li class="nav-item nav-active"><a href="#">Liste des matières</a></li>
+            @if(!isRoute('/home/i', $route))
+            <li class="nav-item">
+                <a href="#">Accueil</a>
+            </li>
+            @endif
+            @if(isRoute('/inventaire/i', $route))
+            <li class="nav-item nav-{{ isRoute('/liste des matiere/i', $uri) }}">
+                <a href="#">Liste des matières</a>
+            </li>
+            <li class="nav-item nav-{{ isRoute('/inventaire.journal/i', $route) }}">
+                <a href="#">Journal</a>
+            </li>
+            <li class="nav-item nav-{{ isRoute('/inventaire.grandlivre/i', $route) }}">
+                <a href="#">Grand-Livre</a>
+            </li>
+            <li class="nav-item nav-{{ isRoute('/inventaire.attente/i', $route) }}">
+                <a href="#">En attente</a>
+            </li>
+            @endif
+            @if(isRoute('/rapport/i', $route))
+            <li class="nav-item">
+                <a href="#">Recensement</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Demolition</a>
+            </li>
+            @endif
+            @if(isRoute('/owner/i', $route))
+            <li class="nav-item nav-{{ isRoute('/owner/i', $route) }}">
+                <a href="#">Liste des détenteurs</a>
+            </li>
+            <li class="nav-item nav-{{ isRoute('/owner.affectation/i', $route) }}">
+                <a href="#">Affectation</a>
+            </li>
+            <li class="nav-item nav-{{ isRoute('/owner.demande/i', $route) }}">
+                <a href="#">Demande</a>
+            </li>
+            @endif
         </div>
         <div>
             <button>Nomenjanahary <span>&rsaquo;</span></button>

@@ -1,5 +1,5 @@
 <h3>Validation du PV de reception</h3>
-<form class="validation-list">
+<form class="validation-list" action="" method="POST">
     <div class="validation-item">
         <div>
             <h4>En attente de validation de mr Toby</h4>

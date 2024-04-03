@@ -5,10 +5,10 @@
 <section class="show-detail">
     <nav>
         <div class="breadcrumbs">
-            <a href="">Inventaire</a>
-            <a href="">Listes des matieres</a>
+            <a href={{ route('inventaire.show') }}>Inventaire</a>
+            <a href={{ route('inventaire.show') }}>Listes des matieres</a>
             <a href="">
-                <span class="breadcrumbs-active">Matiere n°1</span>
+                <span class="breadcrumbs-active">Matiere n°{{ $id }}</span>
             </a>
         </div>
         <div class="searchbar">

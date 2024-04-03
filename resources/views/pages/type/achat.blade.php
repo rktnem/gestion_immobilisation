@@ -17,6 +17,6 @@
             </li>
         </ul>
         <div class="save-part">
-            @include('../pages/type/step/insertion')
+            @include('../pages/type/step/'.$step)
         </div>
 </section>

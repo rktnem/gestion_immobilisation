@@ -5,13 +5,16 @@
 <div class="main-content">
     <div class="main-fonction">
         <h1>Bienvenue Mr Nehemia</h1>
-        <p>De nouveaux acquis, veuillez donc donner le nombre d'immobilisation à inscrire en tant que propriété de FTM
+        <p>
+            De nouveaux immobilisations, selectioner
+            le mode d'acquisition de celui-ci
         </p>
-        <form action="" method="POST">
+        <form action="" method="POST" action={{ route('newInsert.save') }}>
+            @csrf
             <select name="typeEntree" id="">
-                <option value="">Titre honnereux</option>
-                <option value="">Titre de don</option>
-                <option value="">Titre de transfert</option>
+                <option value="achat">Titre honnereux</option>
+                <option value="don">Titre de don</option>
+                <option value="transfert">Titre de transfert</option>
             </select>
             <input type="submit" value="INSCRIRE">
         </form>
@@ -19,7 +22,7 @@
     <div class="menu-section">
         <ul>
             <li class="menu-item">
-                <a href="">
+                <a href={{ route('displayAmmortissement') }}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                             <path
@@ -32,7 +35,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="">
+                <a href={{ route('inventaire.show') }}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                             <path
@@ -58,7 +61,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="">
+                <a href={{ route('owner.show') }}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MatiereController;
+use App\Http\Controllers\DetenteurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages/showOwner');
+    return view('welcome');
 })->name('home');
+
+Route::controller(MatiereController::class)->group(function () {
+    // Cette portion est le route de l'accueil et d'ajout de nouveau matiere
+    Route::post('/', 'newInsert')->name('newInsert.save');
+    Route::post('/achat', 'saveReception')->name('saveReception');
+
+    // Routes de la section inventaire
+    Route::get('/inventaire/liste des matiere', 'showInventaire')->name('inventaire.show');
+    Route::get('/inventaire/Liste des matieres/{id}', 'detailMatiere')->name('inventaire.detail');
+    Route::get('/inventaire/Journal', 'showJournal')->name('inventaire.journal');
+    Route::get('/inventaire/Grand-Livre', 'showLivre')->name('inventaire.grandlivre');
+    Route::get('/inventaire/En-attente', 'showAttente')->name('inventaire.attente');
+
+    // Routes de la section financier
+    Route::get("/Etat financier/Table d'ammortissement", 'displayAmmortissement')->name('displayAmmortissement');
+});
+
+Route::controller(DetenteurController::class)->group(function () {
+    // Routes de la section detenteur
+    Route::get('/detenteur/Liste des detenteurs', 'displayOwner')->name('owner.show');
+});

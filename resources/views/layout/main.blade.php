@@ -1,3 +1,11 @@
+@php
+use Illuminate\Support\Facades\Route;
+
+$route = Route::current()->getName();
+$uri = Route::current()->uri();
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
