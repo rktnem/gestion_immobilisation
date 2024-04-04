@@ -25,7 +25,18 @@
                 <th>Mode d'acquisition</th>
                 <th>Date d'acquisition</th>
             </tr>
-            <tr>
+            <tr onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                <td>
+                    Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne
+                </td>
+                <td>Test lesy ty eee</td>
+                <td>Test lesy ty eee</td>
+                <td>Test lesy ty eee</td>
+                <td>Test lesy ty eee</td>
+                <td>Test lesy ty eee</td>
+                <td>Test lesy ty eee</td>
+            </tr>
+            <tr onclick="window.location.href='{{ route('inventaire.detail', ['id' => 2]) }}'">
                 <td>
                     Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne
                 </td>

@@ -1,3 +1,11 @@
+@php
+use Illuminate\Support\Facades\Route;
+
+$route = Route::current()->getName();
+$uri = Route::current()->uri();
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -25,11 +33,14 @@
 </head>
 
 <body>
-    <div style="display: flex">
+    <div style="display: flex; position: relative;">
         <aside>@include('../partials/sidebar')</aside>
         <div class="content-section">
             @include('../partials/navbar')
             @yield('content')
+        </div>
+        <div class="to-top">
+            <a href="#navbar">&uarr;</a>
         </div>
     </div>
 </body>

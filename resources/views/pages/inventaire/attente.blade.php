@@ -2,6 +2,6 @@
 
 @section('content')
 
-@include('pages/type/'.$type)
+<h1>Welcome to the pending</h1>
 
 @endsection

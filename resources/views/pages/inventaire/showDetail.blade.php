@@ -5,16 +5,21 @@
 <section class="show-detail">
     <nav>
         <div class="breadcrumbs">
-            <a href="">Inventaire</a>
-            <a href="">Listes des matieres</a>
+            <a href={{ route('inventaire.show') }}>Inventaire</a>
+            <a href={{ route('inventaire.show') }}>Listes des matieres</a>
             <a href="">
-                <span class="breadcrumbs-active">Matiere n°1</span>
+                <span class="breadcrumbs-active">Matiere n°{{ $id }}</span>
             </a>
+        </div>
+        <div class="searchbar">
+            <input type="text" name="" id="" placeholder="Rechercher...">
         </div>
     </nav>
     <div class="display-content">
         <div class="detail-part">
-            <h3>Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne</h3>
+            <div>
+                <h3>Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne</h3>
+            </div>
             <div>
                 <p><strong>Nomenclature:</strong> classe <strong>2</strong></p>
                 <p><strong>Mode d'acquisition:</strong> titre honnereux</p>

@@ -15,24 +15,15 @@
     margin-top: 50px;
 }
 .main-fonction p {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .main-fonction form {
     text-align: center;
     margin: 50px 0 20px 0;
 }
-.main-fonction form input[type="number"] {
-    margin-bottom: 30px;
-    font-size: 15px;
-}
-.main-fonction form input[type="submit"] {
-    padding: 10px 20px;
-    font-size: 13px;
-    font-weight: bold;
-    background-color: var(--second);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
+.main-fonction form select {
+    margin-right: 15px;
+    width: 200px;
 }
 
 .menu-section {
@@ -56,6 +47,9 @@
     border-radius: var(--border-radius);
     padding: 45px 60px 10px 60px;
     z-index: 2;
+}
+.menu-section .menu-item a:hover {
+    background-color: #eeeeee;
 }
 .menu-section .menu-item a > div {
     position: absolute;

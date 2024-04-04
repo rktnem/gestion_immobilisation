@@ -1,11 +1,11 @@
-.display-immobilisation, .display-ammortissement, .show-detail {
+.display-immobilisation, .display-ammortissement, .show-detail, .achat-section, .owner-section {
     background-color: white;
     margin: 30px 20px;
     padding: 15px 30px;
     border-radius: var(--border-radius);
 }
 
-.display-immobilisation > nav, .display-ammortissement > nav, .show-detail > nav {
+.display-immobilisation > nav, .display-ammortissement > nav, .show-detail > nav, .owner-section > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +33,18 @@
 .show-detail .display-content {
     margin: 35px 50px;
 }
+.show-detail .display-content .detail-part {
+    margin-bottom: 25px;
+}
+.show-detail .display-content .detail-part div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+.show-detail .display-content .detail-part div:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.2em
+}
 .show-detail .display-content h3 {
     position: relative;
     margin-bottom: 1.5em;
@@ -47,14 +59,6 @@
     background-color: var(--primary);
     border-radius: 50%;
 }
-.show-detail .display-content .detail-part {
-    margin-bottom: 25px;
-}
-.show-detail .display-content .detail-part div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.2em
-}
 .show-detail .display-content .detail-part p {
     font-size: 14px;
     line-height: 1.5;
@@ -64,4 +68,46 @@
 }
 .show-detail .display-content .owner-part table {
     background-color: var(--owner-list-background);
+}
+
+
+
+.owner-section > nav {
+    margin-bottom: 30px;
+}
+.owner-section .owner-detail .owner-direction {
+    margin-bottom: 35px;
+}
+.owner-section .owner-detail .owner-direction h3 {
+    border-bottom: 1px solid var(--border-color);    
+    padding-bottom: 15px;
+    text-indent: 35px;
+}
+.owner-section .owner-detail .owner-direction > form {
+    margin-top: 15px;
+    padding: 0 75px;
+}
+.owner-section .owner-detail .owner-direction tr th:last-child,
+.owner-section .owner-detail .owner-direction td:last-child {
+    border-bottom: none;
+}
+.owner-section .owner-detail .owner-direction tr:hover {
+    background-color: inherit;
+}
+.owner-section .owner-detail .owner-direction button {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.owner-section .owner-detail .owner-direction button:hover {
+    background-color: var(--second-hover);
+}
+.owner-section .owner-detail .owner-direction button span:first-child {
+    margin-right: 10px;
+}
+.owner-section .owner-detail .owner-direction button svg {
+    width: 15px;
+    height: 15px;
 }

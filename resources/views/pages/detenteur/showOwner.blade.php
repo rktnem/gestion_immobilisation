@@ -2,6 +2,4 @@
 
 @section('content')
 
-@include('pages/type/'.$type)
-
 @endsection
