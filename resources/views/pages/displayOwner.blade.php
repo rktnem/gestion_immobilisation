@@ -17,7 +17,7 @@
     <div class="owner-detail">
         <div class="owner-direction">
             <h3 class="spot-primary">Direction des Infrastructures Géographiques et Hydrographiques</h3>
-            <form action="">
+            <form action={{ route('owner.detail', ['id'=> 1]) }}>
                 <table>
                     <tr>
                         <th>IM</th>

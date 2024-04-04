@@ -25,8 +25,8 @@ Route::controller(MatiereController::class)->group(function () {
     Route::post('/achat', 'saveReception')->name('saveReception');
 
     // Routes de la section inventaire
-    Route::get('/inventaire/liste des matiere', 'showInventaire')->name('inventaire.show');
-    Route::get('/inventaire/Liste des matieres/{id}', 'detailMatiere')->name('inventaire.detail');
+    Route::get('/inventaire/Liste des matiere', 'showInventaire')->name('inventaire.show');
+    Route::get('/inventaire/Liste des matiere/{id}', 'detailMatiere')->name('inventaire.detail');
     Route::get('/inventaire/Journal', 'showJournal')->name('inventaire.journal');
     Route::get('/inventaire/Grand-Livre', 'showLivre')->name('inventaire.grandlivre');
     Route::get('/inventaire/En-attente', 'showAttente')->name('inventaire.attente');
@@ -38,4 +38,5 @@ Route::controller(MatiereController::class)->group(function () {
 Route::controller(DetenteurController::class)->group(function () {
     // Routes de la section detenteur
     Route::get('/detenteur/Liste des detenteurs', 'displayOwner')->name('owner.show');
+    Route::get('/detenteur/Liste des detenteurs/{id}', 'detailOwner')->name('owner.detail');
 });

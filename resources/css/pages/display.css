@@ -111,3 +111,26 @@
     width: 15px;
     height: 15px;
 }
+
+
+
+.owner-section .owner-show div:first-child {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #8b8b8b;
+}
+.owner-section .owner-show div:first-child p {
+    font-size: 14px;
+}
+.owner-section .owner-show div:last-child{
+    margin: 15px 25px;
+}
+.owner-section .owner-show div:last-child tr:last-child td {
+    font-size: 14px;
+    font-weight: bold;
+}
+.owner-section .owner-show div:last-child tr:last-child td:first-child {
+    text-align: left;
+}
