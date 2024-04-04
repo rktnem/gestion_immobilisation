@@ -1,16 +1,18 @@
-.display-immobilisation, .display-ammortissement {
+.display-immobilisation, .display-ammortissement, .show-detail {
     background-color: white;
     margin: 30px 20px;
     padding: 15px 30px;
     border-radius: var(--border-radius);
 }
 
-.display-immobilisation > nav, .display-ammortissement > nav {
+.display-immobilisation > nav, .display-ammortissement > nav, .show-detail > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
+
+
 
 .display-ammortissement > .display-content > .rubrique{
     display: inline-block;
@@ -24,4 +26,42 @@
 }
 .display-ammortissement > .display-content tr:last-child {
     font-weight: bold;
+}
+
+
+
+.show-detail .display-content {
+    margin: 35px 50px;
+}
+.show-detail .display-content h3 {
+    position: relative;
+    margin-bottom: 1.5em;
+}
+.show-detail .display-content h3::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -30px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+.show-detail .display-content .detail-part {
+    margin-bottom: 25px;
+}
+.show-detail .display-content .detail-part div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.2em
+}
+.show-detail .display-content .detail-part p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+.show-detail .display-content .detail-part p strong {
+    color: rgb(25, 23, 23);
+}
+.show-detail .display-content .owner-part table {
+    background-color: var(--owner-list-background);
 }
