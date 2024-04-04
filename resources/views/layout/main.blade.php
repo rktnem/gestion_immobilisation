@@ -34,9 +34,11 @@ $uri = Route::current()->uri();
 
 <body>
     <div style="display: flex; position: relative;">
-        <aside>@include('../partials/sidebar')</aside>
+        <aside>
+            <x-sidebar :route="$route" :uri="$uri" />
+        </aside>
         <div class="content-section">
-            @include('../partials/navbar')
+            <x-navbar :route="$route" :uri="$uri" />
             @yield('content')
         </div>
         <div class="to-top">
