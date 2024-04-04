@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::table("matiere", function (Blueprint $table) {
             $table->smallInteger("idDossierReference");
             $table->foreign("idDossierReference")->references("idDossierReference")->on("dossierreference");
+            // Ajout colonne etape
+            $table->integer("etape");
         });
     }
 
