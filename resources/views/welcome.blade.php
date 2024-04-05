@@ -9,7 +9,7 @@
             De nouveaux immobilisations, selectioner
             le mode d'acquisition de celui-ci
         </p>
-        <form action="" method="POST" action={{ route('newInsert.save') }}>
+        <form action="" method="POST" action={{ route('newInsert.reception') }}>
             @csrf
             <select name="typeEntree" id="">
                 <option value="achat">Titre honnereux</option>
