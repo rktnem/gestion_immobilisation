@@ -1,20 +1,22 @@
 // ********* Cacher et afficher le sidebar
 
-let close = $('.side-visible');
-let show = $('.side-hidden');
+$(document).ready(() => {
+    let close = $('.side-visible');
+    let show = $('.side-hidden');
 
-close.on('click', () => {
-    $('.sidebar').css("width", "0px");
-    $('.content-section').css("margin-left", "0px");
-    close.hide();
-    show.show();
-})
+    close.on('click', () => {
+        $('.sidebar').css("width", "0px");
+        $('.content-section').css("margin-left", "0px");
+        close.hide();
+        show.show();
+    })
 
-show.on('click', () => {
-    $('.sidebar').css("width", "250px");
-    $('.content-section').css("margin-left", "250px");
-    close.show();
-    show.hide();
+    show.on('click', () => {
+        $('.sidebar').css("width", "250px");
+        $('.content-section').css("margin-left", "250px");
+        close.show();
+        show.hide();
+    })
 })
 
 // ********** Pour les balises form repetitive
@@ -58,5 +60,3 @@ btnDetenteur.on('click', (e) => {
     detenteurTable.append(formDetenteur(ref));
     ref += 1;
 })
-
-
