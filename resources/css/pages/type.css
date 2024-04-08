@@ -58,27 +58,27 @@
     font-weight: bold;
 }
 
-.current-item .count::before,
-.current-item ~ .step-item .count::before {
+.current-active .count::before,
+.current-active ~ .step-item .count::before {
     display: none;
 }
-.current-item ~ .step-item .count::after {
+.current-active ~ .step-item .count::after {
     width: 10px;
     height: 10px;
 }
-.current-item .count::after {
+.current-active .count::after {
     border: 2px solid var(--second);
     background-color: white;
 }
-.current-item .count {
+.current-active .count {
     color: var(--second);
     font-size: 13px;
     font-weight: bold;
 }
-.current-item ~ .step-item .label {
+.current-active ~ .step-item .label {
     opacity: 0.5;
 }
-.current-item ~ .step-item::after {
+.current-active ~ .step-item::after {
     opacity: .2;
 }
 

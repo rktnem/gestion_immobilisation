@@ -25,6 +25,15 @@ class MatiereController extends Controller
         ]);
     }
 
+    public function insertMatiere(Request $request) {
+        $type = $request->typeEntree;
+
+        return view('pages/newInsert', [
+                "type" => $type,
+                "step" => "insertion"
+        ]);
+    }
+
     public function showInventaire() {
         return view('pages/displayImmo');
     }
