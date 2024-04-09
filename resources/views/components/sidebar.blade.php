@@ -97,7 +97,7 @@
                 </a>
             </div>
             <div class="item-list">
-                <a href="#">
+                <a href={{ route('rapport.recensement') }} class="item-{{ isRoute('/rapport.recensement/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
@@ -107,7 +107,7 @@
                     </span>
                     <span>Recensement</span>
                 </a>
-                <a href="#">
+                <a href={{ route('rapport.demolition') }} class="item-{{ isRoute('/rapport.demolition/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path

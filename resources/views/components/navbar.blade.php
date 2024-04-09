@@ -21,7 +21,7 @@
         <div>
             @if(!isRoute('/home/i', $route))
             <li class="nav-item">
-                <a href="#">Accueil</a>
+                <a href={{ route('home') }}>Accueil</a>
             </li>
             @endif
             @if(isRoute('/inventaire/i', $route))
@@ -39,11 +39,11 @@
             </li>
             @endif
             @if(isRoute('/rapport/i', $route))
-            <li class="nav-item">
-                <a href="#">Recensement</a>
+            <li class="nav-item nav-{{ isRoute('/rapport.recensement/', $route) }}">
+                <a href={{ route('rapport.recensement') }}>Recensement</a>
             </li>
-            <li class="nav-item">
-                <a href="#">Demolition</a>
+            <li class="nav-item nav-{{ isRoute('/rapport.demolition/', $route) }}">
+                <a href={{ route('rapport.demolition') }}>Demolition</a>
             </li>
             @endif
             @if(isRoute('/owner/i', $route))

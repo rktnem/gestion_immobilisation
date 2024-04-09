@@ -35,6 +35,10 @@ Route::controller(MatiereController::class)->group(function () {
 
     // Routes de la section financier
     Route::get("/Etat financier/Table d'ammortissement", 'displayAmmortissement')->name('displayAmmortissement');
+
+    // Routes de la section rapport
+    Route::get('/rapport/recensement', 'makeRecensement')->name('rapport.recensement');
+    Route::get('/rapport/demolition', 'makeDemolition')->name('rapport.demolition');
 });
 
 Route::controller(DetenteurController::class)->group(function () {

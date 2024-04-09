@@ -18,3 +18,4 @@
 .buildpath
 .settings
 .project
+.prettierrc
