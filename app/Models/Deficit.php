@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Deficit extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['quantite'];
 }

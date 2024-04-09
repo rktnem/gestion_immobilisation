@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SousMatiere extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['datePriseEnCharge'];
 }

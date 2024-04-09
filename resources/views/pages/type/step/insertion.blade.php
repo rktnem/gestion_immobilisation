@@ -1,6 +1,8 @@
-<form action="" class="insertion-part">
+<form action={{ route('newInsert.save') }} method="POST" class="insertion-part">
+    @csrf
     <div class="detail-matiere">
         <h3>Lot n°1: Ordinateur portable</h3>
+        <input type="hidden" name="typeEntree" value={{ $type }}>
         <div class="matiere-form">
             <div class="form-group">
                 <label for="">Designation de la matiere</label>
@@ -91,10 +93,10 @@
                 <h4>Etat</h4>
             </div>
             <div class="detenteur-input">
-                <input type="text" name="matricule-1" id="">
-                <input type="text" name="nom-detenteur-1" id="">
-                <input type="text" name="quantite-1" id="">
-                <input type="text" name="etat-1" id="">
+                <input type="text" name="matricule-1" id="" required>
+                <input type="text" name="nom-detenteur-1" id="" required>
+                <input type="text" name="quantite-1" id="" required>
+                <input type="text" name="etat-1" id="" required>
             </div>
         </div>
     </div>

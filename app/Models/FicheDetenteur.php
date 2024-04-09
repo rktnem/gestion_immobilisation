@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class FicheDetenteur extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['quantite'];
 }

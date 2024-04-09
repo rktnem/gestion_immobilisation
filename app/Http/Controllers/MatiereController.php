@@ -17,6 +17,13 @@ class MatiereController extends Controller
     }
 
     public function saveReception(Request $request) {
+        // $rules = [
+        //     'ref' => ['required','max:1'],
+        //     'number' => ['required','max:100'],
+        // ];
+
+        // $request->validate($rules);
+
         $type = $request->typeEntree;
 
         return view('pages/newInsert', [
@@ -25,13 +32,19 @@ class MatiereController extends Controller
         ]);
     }
 
-    public function insertMatiere(Request $request) {
+    public function showInsert(Request $request) {
         $type = $request->typeEntree;
 
         return view('pages/newInsert', [
                 "type" => $type,
                 "step" => "insertion"
         ]);
+    }
+
+    public function saveMatiere(Request $request) {
+        $type = $request->typeEntree;
+
+        return redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
     }
 
     public function showInventaire() {

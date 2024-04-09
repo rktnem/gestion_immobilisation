@@ -29,7 +29,7 @@ let formLot = $('#form-lot');
 
 
 function formGroup(lot) { // Fonction permettant de generer le balise de form-lot
-    return " <div class='form-group'> <label for=lot-"+lot+">Lot n°"+lot+"</label> <input type='text' name='lot-"+lot+"' id='' placeholder='Designation du lot n°"+lot+"...'><input type='number' name='quantite-"+lot+"' id='' style='width: 75px' placeholder='Qté...'></div>"
+    return " <div class='form-group'> <label for=lot-"+lot+">Lot n°"+lot+"</label> <input type='text' name='lot-"+lot+"' id='' placeholder='Designation du lot n°"+lot+"...' required><input type='number' name='quantite-"+lot+"' id='' style='width: 75px' placeholder='Qté...' required></div>"
 }
 
 number.on("keypress", (e) => {
@@ -52,7 +52,7 @@ let detenteurTable = $('.detail-detenteur .detenteur-form');
 let ref = 2;
 
 function formDetenteur(lot) {
-    return '<div class="detenteur-input"><input type="text" name="matricule-'+lot+'" id=""><input type="text" name="nom-detenteur-'+lot+'" id=""><input type="text" name="quantite-'+lot+'" id=""><input type="text" name="etat-'+lot+'" id=""></div>'
+    return '<div class="detenteur-input"><input type="text" name="matricule-'+lot+'" id="" required><input type="text" name="nom-detenteur-'+lot+'" id="" required><input type="text" name="quantite-'+lot+'" id="" required><input type="text" name="etat-'+lot+'" id="" required></div>'
 }
 
 btnDetenteur.on('click', (e) => {

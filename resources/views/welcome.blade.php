@@ -4,6 +4,12 @@
 
 <div class="main-content">
     <div class="main-fonction">
+        @if ($errors->any())
+        <x-error error="Erreur de remplissage, champ requis invalide"></x-error>
+        @endif
+        @if (session()->has("success"))
+        <x-success :success="session()->get('success')"></x-success>
+        @endif
         <h1>Bienvenue Mr Nehemia</h1>
         <p>
             De nouveaux immobilisations, selectioner

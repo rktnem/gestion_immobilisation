@@ -23,7 +23,8 @@ Route::controller(MatiereController::class)->group(function () {
     // Cette portion est le route de l'accueil et d'ajout de nouveau matiere
     Route::post('/', 'newInsert')->name('newInsert.reception');
     Route::post('/achat/validation', 'saveReception')->name('newInsert.validate');
-    Route::post('/achat/insertion', 'insertMatiere')->name('newInsert.insert');
+    Route::get('/achat/insertion', 'showInsert')->name('newInsert.insert');
+    Route::post('/achat/insertion', 'saveMatiere')->name('newInsert.save');
 
     // Routes de la section inventaire
     Route::get('/inventaire/Liste des matiere', 'showInventaire')->name('inventaire.show');

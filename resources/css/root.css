@@ -11,4 +11,6 @@
     --border-radius: 7px; /* Le border radius generale pour la plus part des elements */
     --owner-list-background: #DDDDDD; /* Le fond de la liste des detenteurs dans la liste des matières */
     --row-hover: #EFEFEF; /* Le hover effect lorsqu'on survole le ligne d'un tableau */
+    --error: #ffa3a3; /* Couleur de fond pour les boite d'erreur */
+    --success: rgb(151, 252, 168);
 }

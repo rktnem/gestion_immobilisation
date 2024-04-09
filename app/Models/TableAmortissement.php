@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TableAmortissement extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['amortissementAnterieur', 'dotationExercice'];
 }
