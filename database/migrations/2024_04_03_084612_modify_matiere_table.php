@@ -25,7 +25,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table("matiere", function (Blueprint $table) {
+            $table->dropColumn("etape");
             $table->dropForeign("matiere_iddossierreference_foreign");
+            $table->dropColumn("idDossierReference");
         });
     }
 };
