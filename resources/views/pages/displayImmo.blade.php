@@ -15,39 +15,35 @@
         </div>
     </nav>
     <div class="display-content">
-        <table>
-            <tr>
-                <th>Designation</th>
-                <th>Quantite</th>
-                <th>Unite</th>
-                <th>Prix</th>
-                <th>Prix total</th>
-                <th>Mode d'acquisition</th>
-                <th>Date d'acquisition</th>
-            </tr>
-            <tr onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
-                <td>
-                    Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne
-                </td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-            </tr>
-            <tr onclick="window.location.href='{{ route('inventaire.detail', ['id' => 2]) }}'">
-                <td>
-                    Imprimante 3D Acer Treva maxi, 1990*260 importe d'allemagne
-                </td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-                <td>Test lesy ty eee</td>
-            </tr>
-        </table>
+        <form action="">
+            <div class="check-demolition">
+                <input type="submit" value="A Demolir">
+            </div>
+            <table>
+                <tr>
+                    <th>Designation</th>
+                    <th>Specification technique</th>
+                    <th>Quantite</th>
+                    <th>Unite</th>
+                    <th>Prix</th>
+                    <th>Prix total</th>
+                    <th>Mode d'acquisition</th>
+                    <th>Date d'acquisition</th>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+            </table>
+        </form>
     </div>
 </section>
 

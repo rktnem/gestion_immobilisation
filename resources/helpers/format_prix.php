@@ -2,7 +2,7 @@
 
 if(!function_exists("formatPrix")) {
 
-    function resultFormat($prix) {
+    function formatPrix($prix) {
 
         $prix_format = number_format($prix, 2, ',', ' ');
 

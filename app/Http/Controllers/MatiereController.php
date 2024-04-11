@@ -66,6 +66,10 @@ class MatiereController extends Controller
         return view('pages/inventaire/journal');
     }
 
+    public function showAttente() {
+        return view('pages/inventaire/attente');
+    }
+
     // Fin des fonctions controller pour l'INVENTAIRE
 
     // Les fonctions controller pour l'ETAT FINANCIER

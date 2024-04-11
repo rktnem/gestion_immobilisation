@@ -21,33 +21,48 @@
             <p><strong>Fonction: </strong>Directeur de cabinet</p>
         </div>
         <div>
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th>Designation</th>
-                    <th>Quantité</th>
-                    <th>Valeur d'acquisition</th>
-                    <th>Etat</th>
-                    <th>Fournisseur</th>
-                    <th>Date de prise en charge</th>
-                </tr>
-                <tr>
-                    <td>125</td>
-                    <td>Imprimante Acer 450*2</td>
-                    <td>1</td>
-                    <td>{{ resultFormat(2520.04) }} Ar</td>
-                    <td>Bon</td>
-                    <td>FTM</td>
-                    <td>13 decembre 2014</td>
-                </tr>
-                <tr>
-                    <td colspan="3">Total des matieres detenus</td>
-                    <td>2 506 000,40 Ar</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+            <form action="">
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Designation</th>
+                        <th>Specification technique</th>
+                        <th>Quantité</th>
+                        <th>Valeur d'acquisition</th>
+                        <th>Etat</th>
+                        <th>Fournisseur</th>
+                        <th>Date de prise en charge</th>
+                    </tr>
+                    <tr>
+                        <input type="hidden" name="id-1" value="125">
+                        <td>125</td>
+                        <td>Imprimante Acer</td>
+                        <td>450x2 en plastique</td>
+                        <td>1</td>
+                        <td>{{ formatPrix(2520.04) }} Ar</td>
+                        <td>
+                            <select name="etat" id="">
+                                <option value="Neuf">Neuf</option>
+                                <option value="Bon">Bon</option>
+                                <option value="Abime">Abimé</option>
+                                <option value="Mauvais">Mauvais</option>
+                            </select>
+                        </td>
+                        <td>FTM</td>
+                        <td>13 decembre 2014</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total des matieres detenus</td>
+                        <td></td>
+                        <td>2 506 000,40 Ar</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="MODIFIER">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 </section>

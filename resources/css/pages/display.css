@@ -3,7 +3,8 @@
 .show-detail,
 .achat-section,
 .owner-section,
-.rapport-recensement {
+.rapport-recensement,
+.inventaire-attente {
     background-color: white;
     margin: 30px 20px;
     padding: 15px 30px;
@@ -13,7 +14,8 @@
 .display-immobilisation > nav,
 .display-ammortissement > nav,
 .show-detail > nav,
-.owner-section > nav {
+.owner-section > nav,
+.inventaire-attente > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,6 +128,12 @@
 }
 .owner-section .owner-show div:last-child {
     margin: 15px 25px;
+}
+.owner-section .owner-show div:last-child tr td {
+    padding: 7px;
+}
+.owner-section .owner-show div:last-child tr td input[type="submit"] {
+    font-size: 12px;
 }
 .owner-section .owner-show div:last-child tr:last-child td {
     font-size: 14px;

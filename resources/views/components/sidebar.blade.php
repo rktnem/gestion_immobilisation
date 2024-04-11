@@ -59,7 +59,7 @@
                     </span>
                     <span>Grand-livre</span>
                 </a>
-                <a href="#">
+                <a href={{ route('inventaire.attente') }} class="item-{{ isRoute('/inventaire.attente/i', $route) }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
                             <path

@@ -79,10 +79,8 @@
     opacity: 0.5;
 }
 .current-active ~ .step-item::after {
-    opacity: .2;
+    opacity: 0.2;
 }
-
-
 
 .achat-section .save-part {
     margin-top: 50px;
@@ -105,7 +103,8 @@
     justify-content: center;
     margin-top: 25px;
 }
-.form-general, .form-lot {
+.form-general,
+.form-lot {
     padding: 15px 60px;
 }
 .form-general .form-group,
@@ -116,22 +115,26 @@
     border-right: 1px solid #bcbcbc;
 }
 .form-general .form-group input,
-.form-general .form-group label{
+.form-general .form-group label {
     display: block;
 }
-.form-lot .form-group{
+.form-lot .form-group {
     display: flex;
     align-items: center;
     column-gap: 10px;
+}
+.form-lot .form-group div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 .form-lot h4 {
     margin-bottom: 15px;
 }
 .form-lot label {
     margin-right: 15px;
+    width: 75px;
 }
-
-
 
 .achat-section .save-part .validation-list {
     width: 75%;
@@ -153,17 +156,15 @@
     font-size: 14px;
 }
 
-
-
 .achat-section .save-part .detail-matiere,
 .achat-section .save-part .detail-detenteur {
     margin-bottom: 25px;
 }
 .achat-section .save-part .detail-matiere h3,
-.achat-section .save-part .detail-detenteur h3{
+.achat-section .save-part .detail-detenteur h3 {
     text-align: left;
 }
-.achat-section .save-part .insertion-part > div:last-child{
+.achat-section .save-part .insertion-part > div:last-child {
     display: flex;
     justify-content: center;
 }
