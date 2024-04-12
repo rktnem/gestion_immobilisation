@@ -88,7 +88,8 @@
 .achat-section .save-part label {
     margin-bottom: 10px;
     font-size: 14px;
-    font-weight: 450;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 .achat-section .save-part h3 {
     text-align: center;

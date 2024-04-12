@@ -1,21 +1,38 @@
 // ********* Cacher et afficher le sidebar
 
 $(document).ready(() => {
-    let close = $(".side-visible");
-    let show = $(".side-hidden");
+    let sideClose = $(".side-visible");
+    let sideShow = $(".side-hidden");
 
-    close.on("click", () => {
+    sideClose.on("click", () => {
         $(".sidebar").css("width", "0px");
         $(".content-section").css("margin-left", "0px");
-        close.hide();
-        show.show();
+        sideClose.hide();
+        sideShow.show();
     });
 
-    show.on("click", () => {
+    sideShow.on("click", () => {
         $(".sidebar").css("width", "250px");
         $(".content-section").css("margin-left", "250px");
-        close.show();
-        show.hide();
+        sideClose.show();
+        sideShow.hide();
+    });
+});
+
+// Pour fermer la boite modal d'attente
+
+$(document).ready(() => {
+    let closeBoxWait = $("#closeBoxWait");
+    let showBoxWait = $("#wait");
+
+    closeBoxWait.on("click", () => {
+        $(".waiting").css("opacity", "0");
+        $(".waiting").css("z-index", "-3");
+    });
+
+    showBoxWait.on("click", () => {
+        $(".waiting").css("opacity", "1");
+        $(".waiting").css("z-index", "3");
     });
 });
 

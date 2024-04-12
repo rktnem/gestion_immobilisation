@@ -13,6 +13,10 @@ body {
     font-weight: 400;
     background-color: var(--background);
 }
+body > div:first-child {
+    display: flex;
+    position: relative;
+}
 
 /* Le style de contenues des differents fenetre */
 .content-section {
@@ -125,6 +129,7 @@ th {
     background-color: var(--primary);
     border-radius: 50%;
 }
+/* Pour les boites de dialogue */
 .error,
 .success {
     border-radius: var(--border-radius);
@@ -141,6 +146,12 @@ th {
 .success {
     color: green;
     background-color: var(--success);
+}
+/* Pour les badges */
+.badge {
+    background-color: var(--second);
+    padding: 5px;
+    border-radius: 50%;
 }
 /* Fin de la definition */
 

@@ -1,16 +1,20 @@
 :root {
-    --primary: #E56133; /* C'est le couleur initiale, c'est l'orange */
-    --second: #24BDE0; /* C'est le couleur secondaire, c'est le bleu */
+    --primary: #e56133; /* C'est le couleur initiale, c'est l'orange */
+    --second: #24bde0; /* C'est le couleur secondaire, c'est le bleu */
     --second-hover: #0f819a; /* Le couleur de l'effet hover des boutons */
     --black: #000000; /* C'est le noir initiale qu'on utilisera au lieu de black */
-    --background: #E8E8E8; /* C'est le fond initiale en gris */
-    --side-active: #EF8A6F; /* C'est le fond utiliser lorsqu'un item du side est active */
-    --breadcrumbs-active: #004DBC; /* C'est l'effet active du breadcrumbs, c'est le bleu */
+    --background: #e8e8e8; /* C'est le fond initiale en gris */
+    --side-active: #ef8a6f; /* C'est le fond utiliser lorsqu'un item du side est active */
+    --breadcrumbs-active: #004dbc; /* C'est l'effet active du breadcrumbs, c'est le bleu */
     --border-color: #bbbbbb; /* C'est le couleur du bordure de notre input */
     --border-weight: 0.5px; /* C'est l'epaisseur du bordure de notre input */
     --border-radius: 7px; /* Le border radius generale pour la plus part des elements */
-    --owner-list-background: #DDDDDD; /* Le fond de la liste des detenteurs dans la liste des matières */
-    --row-hover: #EFEFEF; /* Le hover effect lorsqu'on survole le ligne d'un tableau */
+    --owner-list-background: #dddddd; /* Le fond de la liste des detenteurs dans la liste des matières */
+    --row-hover: #efefef; /* Le hover effect lorsqu'on survole le ligne d'un tableau */
     --error: #ffa3a3; /* Couleur de fond pour les boite d'erreur */
-    --success: rgb(151, 252, 168);
+    --success: rgb(
+        151,
+        252,
+        168
+    ); /* Couleur de fond pour les boite de succés */
 }

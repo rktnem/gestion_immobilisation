@@ -1,4 +1,4 @@
-.main-content {    
+.main-content {
     margin: 50px 25px 0 25px;
 }
 
@@ -29,15 +29,11 @@
 .menu-section {
     margin-top: 75px;
 }
-.menu-section ul{
+.menu-section ul {
     display: flex;
     justify-content: space-evenly;
     gap: 25px;
 }
-/* .menu-section .menu-item {
-    background: white;
-    clip-path: polygon(0 0, 100% 0, 100% 9%, 0 8%);
-} */
 .menu-section .menu-item a {
     position: relative;
     display: flex;
@@ -46,7 +42,6 @@
     background-color: white;
     border-radius: var(--border-radius);
     padding: 45px 60px 10px 60px;
-    z-index: 2;
 }
 .menu-section .menu-item a:hover {
     background-color: #eeeeee;
