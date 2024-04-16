@@ -17,6 +17,7 @@ return new class extends Migration
             $table->smallInteger("idMatiere");
             $table->foreign("idEmployee")->references("idEmployee")->on("employee");
             $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->timestamps();
         });
     }
 

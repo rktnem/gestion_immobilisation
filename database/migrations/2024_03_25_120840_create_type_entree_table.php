@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('typeEntree', function (Blueprint $table) {
             $table->smallInteger("idTypeEntree")->autoIncrement();
             $table->string("typeEntree", 50);
+            $table->timestamps();
         });
     }
 

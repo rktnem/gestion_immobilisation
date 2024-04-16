@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('categorie', function (Blueprint $table) {
             $table->smallInteger("idCategorie")->autoIncrement();
             $table->tinyInteger("nomenclature");
+            $table->timestamps();
+
         });
     }
 

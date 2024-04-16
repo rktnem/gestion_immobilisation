@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer("dotationExercice");
             $table->smallInteger("idTauxAmortissement");
             $table->foreign("idTauxAmortissement")->references("idTauxAmortissement")->on("tauxamortissement");
+            $table->timestamps();
         });
     }
 

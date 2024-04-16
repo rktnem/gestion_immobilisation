@@ -20,6 +20,7 @@ return new class extends Migration
             $table->primary(['idEmployee', "idSousMatiere"]);
             $table->foreign("idEmployee")->references("idEmployee")->on("employee");
             $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatiere");
+            $table->timestamps();
         });
         DB::statement("alter table fichedetenteur change idFicheDetenteur idFicheDetenteur smallint(7) not null auto_increment ");
     }

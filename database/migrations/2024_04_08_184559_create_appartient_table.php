@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('appartient', function (Blueprint $table) {
+        Schema::create('matiereReception', function (Blueprint $table) {
             $table->smallInteger("idMatiere");
             $table->smallInteger("idReception");
             $table->primary(["idMatiere", "idReception"]);
             $table->foreign("idReception")->references("idReception")->on("reception");
             $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->timestamps();
         });
     }
 

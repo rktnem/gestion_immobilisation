@@ -15,6 +15,7 @@ return new class extends Migration
             $table->smallInteger("idTauxAmortissement")->autoIncrement();
             $table->string("rubrique", 30);
             $table->tinyInteger("taux");
+            $table->timestamps();
         });
     }
 

@@ -42,6 +42,162 @@
                     <td>Titre honnereux</td>
                     <td>13 decembre 2024</td>
                 </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
+                <tr>
+                    <td onclick="window.location.href='{{ route('inventaire.detail', ['id' => 1]) }}'">
+                        Imprimante 3D Acer Treva maxi
+                    </td>
+                    <td>1990*260 importe d'allemagne</td>
+                    <td>3</td>
+                    <td>piece</td>
+                    <td>{{ formatPrix(1250000,50) }} Ar</td>
+                    <td>{{ formatPrix(7500015,00) }} Ar</td>
+                    <td>Titre honnereux</td>
+                    <td>13 decembre 2024</td>
+                </tr>
             </table>
         </form>
     </div>

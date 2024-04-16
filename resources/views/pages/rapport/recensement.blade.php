@@ -42,11 +42,11 @@
                 <div class="rapport-input">
                     <div class="form-group">
                         <label for="quantite-existant">Quantité existant</label>
-                        <input type="text" name="quantite-existant" style="width: 125px" id="" value="1" readonly>
+                        <input type="text" name="quantite-existant" style="width: 50px" id="" value="1" readonly>
                     </div>
                     <div class="form-group">
                         <label for="quantite-constate">Quantité constaté</label>
-                        <input type="text" name="quantite-constate" id="" style="width: 125px"
+                        <input type="text" name="quantite-constate" id="" style="width: 50px"
                             placeholder="Quantité constaté...">
                     </div>
                 </div>

@@ -27,12 +27,12 @@ $(document).ready(() => {
 
     closeBoxWait.on("click", () => {
         $(".waiting").css("opacity", "0");
-        $(".waiting").css("z-index", "-3");
+        $(".waiting").css("z-index", "-5");
     });
 
     showBoxWait.on("click", () => {
         $(".waiting").css("opacity", "1");
-        $(".waiting").css("z-index", "3");
+        $(".waiting").css("z-index", "5");
     });
 });
 

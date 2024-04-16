@@ -15,6 +15,7 @@ return new class extends Migration
             $table->smallInteger("idAgentDemolisseur")->autoIncrement();
             $table->smallInteger("idEmployee");
             $table->foreign("idEmployee")->references("idEmployee")->on("employee");
+            $table->timestamps();
         });
     }
 

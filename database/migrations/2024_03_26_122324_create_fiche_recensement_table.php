@@ -28,6 +28,7 @@ return new class extends Migration
             $table->foreign("idEtat")->references("idEtat")->on("etat");
             $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatiere");
             $table->foreign("idDeficit")->references("idDeficit")->on("deficit");
+            $table->timestamps();
         });
         DB::statement("alter table ficherecensement change idFicheRecensement idFicheRecensement smallint(7) not null auto_increment ");
     }

@@ -1,0 +1,85 @@
+.guest-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.guest-section section {
+    background-color: white;
+    padding: 15px 35px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 26px 0px rgba(148, 132, 132, 0.53);
+    -webkit-box-shadow: 0px 0px 26px 0px rgba(148, 132, 132, 0.53);
+    -moz-box-shadow: 0px 0px 26px 0px rgba(148, 132, 132, 0.53);
+}
+.guest-section h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.guest-section .form-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 10px;
+}
+.guest-section .form-group label > span {
+    margin-left: 4px;
+    font-size: 13px;
+}
+.guest-section .form-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.guest-section .form-button button {
+    background-color: var(--primary);
+    text-transform: uppercase;
+}
+.guest-section .form-button button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Navigation de l'authentification */
+.nav-auth {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.nav-auth a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px 25px;
+    color: white;
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    transition: 0.3s ease;
+}
+.nav-auth a:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Formulaire de login */
+.guest-section .login-section {
+    width: 410px;
+}
+
+/* Formulaire de creation de compte */
+.guest-section .register-section {
+    width: 875px;
+}
+
+.guest-section .register-section .form-register {
+    display: flex;
+    padding: 15px 0;
+}
+.guest-section .register-section .form-register .form-user,
+.guest-section .register-section .form-register .form-employee {
+    flex-grow: 1;
+    padding: 0 35px;
+}
+.guest-section .register-section .form-register .form-user {
+    border-right: var(--border-weight) solid var(--border-color);
+}

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->smallInteger("idAgentDemolisseur")->nullable(FALSE);
             $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
             $table->foreign("idAgentDemolisseur")->references("idAgentDemolisseur")->on("agentdemolisseur");
+            $table->timestamps();
         });
     }
 

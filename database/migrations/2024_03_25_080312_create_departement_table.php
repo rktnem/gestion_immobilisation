@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('departement', function (Blueprint $table) {
             $table->smallInteger("idDepartement")->autoIncrement();
-            $table->string("nom");
+            $table->string("departement");
             $table->char("sigle")->unique();
+            $table->timestamps();
         });
     }
 

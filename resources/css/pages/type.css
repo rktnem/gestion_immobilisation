@@ -1,7 +1,7 @@
 .step-part {
     position: relative;
     display: flex;
-    z-index: 10;
+    z-index: 4;
 }
 .step-item {
     position: relative;
@@ -30,7 +30,7 @@
     color: transparent;
     margin-bottom: 10px;
     border-radius: 50%;
-    z-index: 10;
+    z-index: 4;
 }
 .step-item .count::before {
     content: "";
@@ -51,7 +51,7 @@
     height: 30px;
     background-color: var(--second);
     border-radius: 50%;
-    z-index: -10;
+    z-index: -4;
 }
 .step-item .label {
     font-size: 14px;

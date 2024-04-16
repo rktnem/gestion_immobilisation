@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("detail", 50);
             $table->smallInteger("idPiece")->nullable(FALSE)->unique();
             $table->foreign("idPiece")->references("idPiece")->on("piecejustificative");
+            $table->timestamps();
         });
     }
 

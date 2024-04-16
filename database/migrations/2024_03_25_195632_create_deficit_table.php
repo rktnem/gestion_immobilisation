@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer("quantite");
             $table->smallInteger("idMatiere");
             $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->timestamps();
         });
     }
 

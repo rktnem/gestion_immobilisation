@@ -34,6 +34,7 @@ return new class extends Migration
             $table->foreign("idPiece")->references("idPiece")->on("piecejustificative");
             $table->foreign("idEspeceUnite")->references("idEspeceUnite")->on("especeunite");
             $table->foreign("idCategorie")->references("idCategorie")->on("Categorie");
+            $table->timestamps();
         });
     }
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pieceJustificative', function (Blueprint $table) {
             $table->smallInteger("idPiece")->autoIncrement();
             $table->smallInteger("quantite");
+            $table->timestamps();
         });
     }
 

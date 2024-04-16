@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('etat', function (Blueprint $table) {
             $table->smallInteger("idEtat")->autoIncrement();
             $table->string("typeEtat", 10);
+            $table->timestamps();
         });
     }
 

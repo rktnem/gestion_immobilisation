@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('employee', function (Blueprint $table) {
             $table->smallInteger("idEmployee")->autoIncrement();
             $table->string("matricule", 7)->unique();
+            $table->string('nom', 150);
+            $table->string('prenom', 250);
+            $table->string('poste', 150);
             $table->smallInteger("idDepartement");
             $table->foreign("idDepartement")->references("idDepartement")->on("Departement");
+            $table->timestamps();
         });
     }
 

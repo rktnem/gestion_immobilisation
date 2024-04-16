@@ -37,8 +37,13 @@ a:visited {
     color: var(--black);
 }
 
+label {
+    font-size: 14px;
+}
 input[type="text"],
 input[type="number"],
+input[type="password"],
+input[type="email"],
 select {
     padding: 10px 5px 10px 10px;
     border-style: solid;
@@ -52,6 +57,8 @@ textarea {
 }
 input[type="text"]:focus,
 input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
 select:focus,
 textarea:focus {
     outline: var(--border-weight) solid var(--primary);
@@ -104,6 +111,18 @@ th {
     border-bottom: var(--border-weight) solid var(--border-color);
     padding: 15px 0;
 }
+
+/* Ajustement du scroolbar */
+section::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    background-color: white;
+}
+section::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+}
+
 /* Pour centrer le texte ou non */
 .center {
     text-align: center;

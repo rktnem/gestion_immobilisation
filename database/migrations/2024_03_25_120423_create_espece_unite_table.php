@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('especeUnite', function (Blueprint $table) {
             $table->smallInteger("idEspeceUnite")->autoIncrement();
             $table->string("typeUnite", 20);
+            $table->timestamps();
         });
     }
 

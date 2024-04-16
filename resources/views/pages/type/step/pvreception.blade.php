@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="objet">Objet</label>
-                <input type="text" name="objet" id="" style="min-width: 300px;" placeholder="Titre de l'objet...">
+                <input type="text" name="objet" id="" style="min-width: 300px;" placeholder="Rubrique de l'objet...">
             </div>
             <div class="form-group">
                 <label for="number">Nombre de lot</label>
