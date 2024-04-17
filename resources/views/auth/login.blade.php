@@ -65,7 +65,6 @@ $users = json_encode($users);
                     $('#sigle').val(user.sigle);
                 }
             }
-            // console.log(JSON.parse("{{ $depart }}") 225263)
         }
     }
 </script>
