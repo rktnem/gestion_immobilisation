@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('sousMatieres', function (Blueprint $table) {
             $table->smallInteger("idSousMatiere")->autoIncrement();
             $table->date("datePriseEnCharge");
-            $table->smallInteger("idEtat");
-            $table->smallInteger("idMatiere");
-            $table->foreign("idEtat")->references("idEtat")->on("etats");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
+            $table->foreignId("idEtat")->constrained()->onDelete('cascade');
+            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

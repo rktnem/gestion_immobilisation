@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('excedents', function (Blueprint $table) {
             $table->integer("idExcedent")->autoIncrement();
             $table->integer("quantite");
-            $table->smallInteger("idMatiere");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
+            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

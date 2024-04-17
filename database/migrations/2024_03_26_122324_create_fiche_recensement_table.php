@@ -13,23 +13,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ficheRecensements', function (Blueprint $table) {
-            $table->string("idAgentRecenseur", 50);
-            $table->integer("idExcedent");
-            $table->smallInteger("idEtat");
-            $table->smallInteger("idSousMatiere");
-            $table->integer("idDeficit");
-            $table->smallInteger("idFicheRecensement")->unique();
+            $table->smallInteger('idFicheRecensement')->autoIncrement();
             $table->date("dateRecensement");
             $table->text("observation");
             $table->string("exercice", 15);
-            $table->primary(["idAgentRecenseur", "idExcedent", "idEtat", "idSousMatiere", "idDeficit"]);
-            $table->foreign("idExcedent")->references("idExcedent")->on("excedents");
-            $table->foreign("idEtat")->references("idEtat")->on("etats");
-            $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatieres");
-            $table->foreign("idDeficit")->references("idDeficit")->on("deficits");
+            $table->foreignId("idSousMatiere")->constrained()->onDelete('cascade');
+            $table->foreignId("idExcedent")->constrained()->onDelete('cascade');
+            $table->foreignId("idDeficit")->constrained()->onDelete('cascade');
+            $table->foreignId("idEtat")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
-        DB::statement("alter table ficherecensements change idFicheRecensement idFicheRecensement smallint(7) not null auto_increment ");
     }
 
     /**

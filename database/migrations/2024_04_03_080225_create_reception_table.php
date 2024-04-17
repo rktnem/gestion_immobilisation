@@ -12,12 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('receptions', function (Blueprint $table) {
-            $table->smallInteger("idReception")->autoIncrement();
-            $table->string("titreArticle", 50);
-            $table->string("detail", 50);
-            $table->smallInteger("idPiece")->nullable(FALSE)->unique();
-            $table->foreign("idPiece")->references("idPiece")->on("piecejustificative");
-            $table->timestamps();
+            $table->smallInteger('idReception')->autoIncrement();
+            $table->string("referenceDAO", 30);
+            $table->string("objet", 150);
+            $table->smallInteger("nombreLot");
         });
     }
 

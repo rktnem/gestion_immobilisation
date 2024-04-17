@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('nom', 150);
             $table->string('prenom', 250);
             $table->string('poste', 150);
-            $table->smallInteger("idDepartement");
-            $table->foreign("idDepartement")->references("idDepartement")->on("departements");
+            $table->foreignId("idDepartement")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

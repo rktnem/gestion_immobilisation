@@ -9,7 +9,7 @@
     <h2>S'authentifier</h2>
     @if ($errors->any())
     @foreach ($errors->all() as $error)
-    <p>{{ $error }}</p>
+    <x-error :error="$error"></x-error>
     @endforeach
     @endif
     <form action={{ route('login') }} method="post">

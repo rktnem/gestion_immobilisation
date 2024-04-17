@@ -59,7 +59,7 @@
             @endif
         </div>
         <div>
-            <button>Nomenjanahary <span>&rsaquo;</span></button>
+            <button>{{ Auth::user()->pseudo }} <span>&rsaquo;</span></button>
             <span class="logout">
                 <form action={{ route('logout') }} method="post">
                     @csrf

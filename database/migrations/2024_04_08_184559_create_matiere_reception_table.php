@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table("matieres", function (Blueprint $table) {
-            // Ajout colonne etape
-            $table->integer("etape");
+        Schema::create('matiere_reception', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('idMatiere')->constrained()->onDelete('cascade');
+            $table->foreignId('idReception')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table("matieres", function (Blueprint $table) {
-            $table->dropColumn("etape");
-        });
+        Schema::dropIfExists('matiereReceptions');
     }
 };

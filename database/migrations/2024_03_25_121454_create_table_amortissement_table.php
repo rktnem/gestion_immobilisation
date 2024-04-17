@@ -15,8 +15,7 @@ return new class extends Migration
             $table->smallInteger("idTableAmortissement")->autoIncrement();
             $table->integer("amortissementAnterieur");
             $table->integer("dotationExercice");
-            $table->smallInteger("idTauxAmortissement");
-            $table->foreign("idTauxAmortissement")->references("idTauxAmortissement")->on("tauxamortissements");
+            $table->foreignId("idTauxAmortissement")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

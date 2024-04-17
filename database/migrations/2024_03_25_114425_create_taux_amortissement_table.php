@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tauxAmortissements', function (Blueprint $table) {
             $table->smallInteger("idTauxAmortissement")->autoIncrement();
-            $table->string("rubrique", 30);
+            $table->string("rubrique", 200);
             $table->tinyInteger("taux");
             $table->timestamps();
         });

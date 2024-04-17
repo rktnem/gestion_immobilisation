@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('matieres', function (Blueprint $table) {
             $table->smallInteger("idMatiere")->autoIncrement();
             $table->string("designation");
+            $table->string("specification")->nullable()->default('Aucune specification');
             $table->date("dateAcquisition");
             $table->string("prix", 10);
+            $table->integer("prixMinimal")->nullable()->default(0);
+            $table->integer("prixMaximal")->nullable()->default(0);
             $table->string("societeAchat", 50);
             $table->string("dossierReference", 4);
             $table->smallInteger("quantite");
@@ -23,16 +26,11 @@ return new class extends Migration
             $table->date("dateSortie");
             $table->smallInteger("numeroFolio");
             $table->text("observation");
-            $table->string("phase");
-            $table->smallInteger("idTypeEntree")->unique();
-            $table->smallInteger("idTableAmortissement")->unique();
-            $table->smallInteger("idPiece");
-            $table->smallInteger("idEspeceUnite")->unique();
-            $table->smallInteger("idCategorie");
-            $table->foreign("idTypeEntree")->references("idTypeEntree")->on("typeentrees");
-            $table->foreign("idTableAmortissement")->references("idTableAmortissement")->on("tableamortissements");
-            $table->foreign("idEspeceUnite")->references("idEspeceUnite")->on("especeunites");
-            $table->foreign("idCategorie")->references("idCategorie")->on("categories");
+            $table->smallInteger('etape');
+            $table->foreignId("idTypeEntree")->constrained()->onDelete('cascade');
+            $table->foreignId("idTableAmortissement")->constrained()->onDelete('cascade');
+            $table->foreignId("idEspeceUnite")->constrained()->onDelete('cascade');
+            $table->foreignId("idCategorie")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

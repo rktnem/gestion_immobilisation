@@ -13,16 +13,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ficheDetenteurs', function (Blueprint $table) {
-            $table->smallInteger("idEmployee");
-            $table->smallInteger("idSousMatiere");
-            $table->smallInteger("idFicheDetenteur")->unique();
+            $table->smallInteger('idFicheDetenteur')->autoIncrement();
             $table->smallInteger("quantite");
-            $table->primary(['idEmployee', "idSousMatiere"]);
-            $table->foreign("idEmployee")->references("idEmployee")->on("employees");
-            $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatieres");
+            $table->foreignId("idEmployee")->constrained()->onDelete('cascade');
+            $table->foreignId("idSousMatiere")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
-        DB::statement("alter table fichedetenteurs change idFicheDetenteur idFicheDetenteur smallint(7) not null auto_increment ");
     }
 
     /**

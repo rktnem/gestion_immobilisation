@@ -10,7 +10,7 @@
         @if (session()->has("success"))
         <x-success :success="session()->get('success')"></x-success>
         @endif
-        <h1>Bienvenue Mr {{ Auth::user()->name }}</h1>
+        <h1>Bienvenue Mr/Mme {{ Auth::user()->pseudo }}</h1>
         <p>
             De nouveaux immobilisations, selectioner
             le mode d'acquisition de celui-ci

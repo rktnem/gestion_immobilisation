@@ -152,11 +152,10 @@ section::-webkit-scrollbar-thumb {
     border-radius: 50%;
 }
 /* Pour les boites de dialogue */
-.error,
-.success {
+.box {
     border-radius: var(--border-radius);
-    margin-top: 15px;
-    padding: 25px 0;
+    margin: 15px auto;
+    padding: 10px 0;
     width: 75%;
     text-align: center;
     font-size: 14px;
