@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('depotMatiere', function (Blueprint $table) {
+        Schema::create('depotMatieres', function (Blueprint $table) {
             $table->smallInteger("idDepotMatiere")->autoIncrement();
             $table->smallInteger("idEmployee")->unique();
             $table->smallInteger("idMatiere");
-            $table->foreign("idEmployee")->references("idEmployee")->on("employee");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->foreign("idEmployee")->references("idEmployee")->on("employees");
+            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ficheRecensement', function (Blueprint $table) {
+        Schema::create('ficheRecensements', function (Blueprint $table) {
             $table->string("idAgentRecenseur", 50);
             $table->integer("idExcedent");
             $table->smallInteger("idEtat");
@@ -23,14 +23,13 @@ return new class extends Migration
             $table->text("observation");
             $table->string("exercice", 15);
             $table->primary(["idAgentRecenseur", "idExcedent", "idEtat", "idSousMatiere", "idDeficit"]);
-            $table->foreign("idAgentRecenseur")->references("idAgentRecenseur")->on("agentRecenseur");
-            $table->foreign("idExcedent")->references("idExcedent")->on("excedent");
-            $table->foreign("idEtat")->references("idEtat")->on("etat");
-            $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatiere");
-            $table->foreign("idDeficit")->references("idDeficit")->on("deficit");
+            $table->foreign("idExcedent")->references("idExcedent")->on("excedents");
+            $table->foreign("idEtat")->references("idEtat")->on("etats");
+            $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatieres");
+            $table->foreign("idDeficit")->references("idDeficit")->on("deficits");
             $table->timestamps();
         });
-        DB::statement("alter table ficherecensement change idFicheRecensement idFicheRecensement smallint(7) not null auto_increment ");
+        DB::statement("alter table ficherecensements change idFicheRecensement idFicheRecensement smallint(7) not null auto_increment ");
     }
 
     /**
@@ -38,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ficheRecensement');
+        Schema::dropIfExists('ficheRecensements');
     }
 };

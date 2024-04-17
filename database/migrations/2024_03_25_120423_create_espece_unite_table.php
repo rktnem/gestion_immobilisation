@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('especeUnite', function (Blueprint $table) {
+        Schema::create('especeUnites', function (Blueprint $table) {
             $table->smallInteger("idEspeceUnite")->autoIncrement();
             $table->string("typeUnite", 20);
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('especeUnite');
+        Schema::dropIfExists('especeUnites');
     }
 };

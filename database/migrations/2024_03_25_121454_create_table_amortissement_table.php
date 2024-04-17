@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tableAmortissement', function (Blueprint $table) {
+        Schema::create('tableAmortissements', function (Blueprint $table) {
             $table->smallInteger("idTableAmortissement")->autoIncrement();
             $table->integer("amortissementAnterieur");
             $table->integer("dotationExercice");
             $table->smallInteger("idTauxAmortissement");
-            $table->foreign("idTauxAmortissement")->references("idTauxAmortissement")->on("tauxamortissement");
+            $table->foreign("idTauxAmortissement")->references("idTauxAmortissement")->on("tauxamortissements");
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tableAmortissement');
+        Schema::dropIfExists('tableAmortissements');
     }
 };

@@ -18,7 +18,7 @@
 
     <!-- Fonts -->
 
-    @vite('resources/js/app.js')
+    @vite(['resources/js/app.js', 'resources/js/jquery.js'])
     @vite(['resources/css/app.css', 'resources/css/auth/auth.css'])
 </head>
 

@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deficit', function (Blueprint $table) {
+        Schema::create('deficits', function (Blueprint $table) {
             $table->integer("idDeficit")->autoIncrement();
             $table->integer("quantite");
             $table->smallInteger("idMatiere");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deficit');
+        Schema::dropIfExists('deficits');
     }
 };

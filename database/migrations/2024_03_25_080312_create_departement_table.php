@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departement', function (Blueprint $table) {
+        Schema::create('departements', function (Blueprint $table) {
             $table->smallInteger("idDepartement")->autoIncrement();
             $table->string("departement");
             $table->char("sigle")->unique();
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departement');
+        Schema::dropIfExists('departements');
     }
 };

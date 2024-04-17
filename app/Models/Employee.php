@@ -2,12 +2,34 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Departement;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Employee extends Model
 {
     use HasFactory;
 
     protected $fillable = ['matricule', 'nom', 'prenom', 'poste'];
+
+    /**
+     * Get the Departement that owns the Employee
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function departement(): BelongsTo
+    {
+        return $this->belongsTo(Departement::class, 'idDepartement');
+    }
+
+    /**
+     * Get the user that owns the Employee
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->hasOne(User::class, 'idEmployee');;
+    }
 }

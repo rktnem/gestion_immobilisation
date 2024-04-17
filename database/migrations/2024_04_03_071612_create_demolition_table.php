@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('demolition', function (Blueprint $table) {
+        Schema::create('demolitions', function (Blueprint $table) {
             $table->smallInteger("idType")->autoIncrement();
             $table->lineString("type", 15);
             $table->date("dateDemolition");
             $table->string("quantite", 50);
             $table->smallInteger("idMatiere")->nullable(FALSE);
-            $table->smallInteger("idAgentDemolisseur")->nullable(FALSE);
-            $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
-            $table->foreign("idAgentDemolisseur")->references("idAgentDemolisseur")->on("agentdemolisseur");
+            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('demolition');
+        Schema::dropIfExists('demolitions');
     }
 };

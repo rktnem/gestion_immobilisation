@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
+use App\Models\Employee;
+use App\Models\Departement;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Registered;
 
 class RegisteredUserController extends Controller
 {
@@ -20,17 +22,28 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): Response
     {
+        // dd($request);
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required'],
+            'last_name' => ['required'],
+            'pseudo' => ['required'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', Rules\Password::defaults()],
+            'matricule' => ['required'],
+            'sigle' => ['required'],
+            'poste' => ['required'],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    $user = User::create([
+        'name' => $request->name,
+        'last_name' => $request->last_name,
+        'pseudo' => $request->pseudo,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'matricule' => $request->matricule,
+        'sigle' => $request->sigle,
+        'poste' => $request->poste,
+    ]);
 
         event(new Registered($user));
 

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matiereReception', function (Blueprint $table) {
+        Schema::create('matiereReceptions', function (Blueprint $table) {
             $table->smallInteger("idMatiere");
             $table->smallInteger("idReception");
             $table->primary(["idMatiere", "idReception"]);
-            $table->foreign("idReception")->references("idReception")->on("reception");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->foreign("idReception")->references("idReception")->on("receptions");
+            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('appartient');
+        Schema::dropIfExists('matiereReceptions');
     }
 };

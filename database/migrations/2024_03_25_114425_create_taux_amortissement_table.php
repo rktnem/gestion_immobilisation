@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tauxAmortissement', function (Blueprint $table) {
+        Schema::create('tauxAmortissements', function (Blueprint $table) {
             $table->smallInteger("idTauxAmortissement")->autoIncrement();
             $table->string("rubrique", 30);
             $table->tinyInteger("taux");
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tauxAmortissement');
+        Schema::dropIfExists('tauxAmortissements');
     }
 };

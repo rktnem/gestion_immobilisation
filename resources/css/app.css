@@ -40,6 +40,9 @@ a:visited {
 label {
     font-size: 14px;
 }
+input:disabled {
+    color: var(--black);
+}
 input[type="text"],
 input[type="number"],
 input[type="password"],

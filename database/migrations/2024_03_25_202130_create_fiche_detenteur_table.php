@@ -12,17 +12,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ficheDetenteur', function (Blueprint $table) {
+        Schema::create('ficheDetenteurs', function (Blueprint $table) {
             $table->smallInteger("idEmployee");
             $table->smallInteger("idSousMatiere");
             $table->smallInteger("idFicheDetenteur")->unique();
             $table->smallInteger("quantite");
             $table->primary(['idEmployee', "idSousMatiere"]);
-            $table->foreign("idEmployee")->references("idEmployee")->on("employee");
-            $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatiere");
+            $table->foreign("idEmployee")->references("idEmployee")->on("employees");
+            $table->foreign("idSousMatiere")->references("idSousMatiere")->on("sousmatieres");
             $table->timestamps();
         });
-        DB::statement("alter table fichedetenteur change idFicheDetenteur idFicheDetenteur smallint(7) not null auto_increment ");
+        DB::statement("alter table fichedetenteurs change idFicheDetenteur idFicheDetenteur smallint(7) not null auto_increment ");
     }
 
     /**
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ficheDetenteur');
+        Schema::dropIfExists('ficheDetenteurs');
     }
 };

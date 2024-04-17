@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matiere', function (Blueprint $table) {
+        Schema::create('matieres', function (Blueprint $table) {
             $table->smallInteger("idMatiere")->autoIncrement();
             $table->string("designation");
             $table->date("dateAcquisition");
@@ -29,11 +29,10 @@ return new class extends Migration
             $table->smallInteger("idPiece");
             $table->smallInteger("idEspeceUnite")->unique();
             $table->smallInteger("idCategorie");
-            $table->foreign("idTypeEntree")->references("idTypeEntree")->on("typeentree");
-            $table->foreign("idTableAmortissement")->references("idTableAmortissement")->on("tableamortissement");
-            $table->foreign("idPiece")->references("idPiece")->on("piecejustificative");
-            $table->foreign("idEspeceUnite")->references("idEspeceUnite")->on("especeunite");
-            $table->foreign("idCategorie")->references("idCategorie")->on("Categorie");
+            $table->foreign("idTypeEntree")->references("idTypeEntree")->on("typeentrees");
+            $table->foreign("idTableAmortissement")->references("idTableAmortissement")->on("tableamortissements");
+            $table->foreign("idEspeceUnite")->references("idEspeceUnite")->on("especeunites");
+            $table->foreign("idCategorie")->references("idCategorie")->on("categories");
             $table->timestamps();
         });
     }
@@ -43,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('matiere');
+        Schema::dropIfExists('matieres');
     }
 };

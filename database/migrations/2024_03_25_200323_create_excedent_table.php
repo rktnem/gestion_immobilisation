@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('excedent', function (Blueprint $table) {
+        Schema::create('excedents', function (Blueprint $table) {
             $table->integer("idExcedent")->autoIncrement();
             $table->integer("quantite");
             $table->smallInteger("idMatiere");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('excedent');
+        Schema::dropIfExists('excedents');
     }
 };

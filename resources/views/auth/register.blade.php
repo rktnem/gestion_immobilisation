@@ -7,7 +7,13 @@
         <h2>FTM</h2>
     </div>
     <h2>Creer un compte</h2>
-    <form action={{ route('login') }} method="post">
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    <p>{{ $error }}</p>
+    @endforeach
+    @endif
+    <form action={{ route('register') }} method="post">
+        @csrf
         <div class="form-register">
             <div class="form-user">
                 <div class="form-group">
@@ -39,10 +45,9 @@
                 <div class="form-group">
                     <label for="sigle">Sigle du departement</label>
                     <select name="sigle" id="sigle">
-                        <option value="DG">DG</option>
-                        <option value="DAF">DAF</option>
-                        <option value="DIGH">DIGH</option>
-                        <option value="DMOSP">DMOSP</option>
+                        @foreach ($departements as $departement)
+                        <option value={{ $departement->sigle }}>{{ $departement->sigle }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
@@ -60,5 +65,31 @@
         </div>
     </form>
 </section>
+
+@php
+$depart = json_encode($departements);
+$employee = json_encode($employees);
+@endphp
+
+<script>
+    let matricule = document.getElementById('matricule');
+    let departs = <?php echo $depart; ?>;
+    let employees = <?php echo $employee; ?>;
+
+    matricule.onkeypress = (e) => {
+        if(e.key === "Enter") {
+            e.preventDefault();
+            for(employee of employees) {
+                if(employee.matricule === e.target.value) {
+                    $('#name').val(employee.nom);
+                    $('#last_name').val(employee.prenom);
+                    $('#sigle').val(departs[employee.idDepartement - 1].sigle);                    $('#departement').val(departs[employee.idDepartement - 1].departement);
+                    $('#poste').val(employee.poste);     
+                }
+            }
+            // console.log(JSON.parse("{{ $depart }}") 225263)
+        }
+    }
+</script>
 
 @endsection

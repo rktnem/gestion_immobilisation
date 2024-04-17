@@ -11,9 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table("matiere", function (Blueprint $table) {
-            $table->smallInteger("idDossierReference");
-            $table->foreign("idDossierReference")->references("idDossierReference")->on("dossierreference");
+        Schema::table("matieres", function (Blueprint $table) {
             // Ajout colonne etape
             $table->integer("etape");
         });
@@ -24,10 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table("matiere", function (Blueprint $table) {
+        Schema::table("matieres", function (Blueprint $table) {
             $table->dropColumn("etape");
-            $table->dropForeign("matiere_iddossierreference_foreign");
-            $table->dropColumn("idDossierReference");
         });
     }
 };

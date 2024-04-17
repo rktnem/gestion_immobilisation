@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 // Pour les vues des differents page de gestion des utilisateurs
 
 Route::controller(AuthViewController::class)->group(function () {
+    Route::get('/dashboard', 'dashboardView')->name('dashboard');
     Route::get('/login', 'loginView')->name('login');
     Route::get('/register', 'registerView')->name('register');
 });

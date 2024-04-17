@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sousMatiere', function (Blueprint $table) {
+        Schema::create('sousMatieres', function (Blueprint $table) {
             $table->smallInteger("idSousMatiere")->autoIncrement();
             $table->date("datePriseEnCharge");
             $table->smallInteger("idEtat");
             $table->smallInteger("idMatiere");
-            $table->foreign("idEtat")->references("idEtat")->on("etat");
-            $table->foreign("idMatiere")->references("idMatiere")->on("matiere");
+            $table->foreign("idEtat")->references("idEtat")->on("etats");
+            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sousMatiere');
+        Schema::dropIfExists('sousMatieres');
     }
 };

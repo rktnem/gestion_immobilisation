@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agentRecenseur', function (Blueprint $table) {
+        Schema::create('agentRecenseurs', function (Blueprint $table) {
             $table->string("idAgentRecenseur", 50)->primary();
             $table->smallInteger("idEmployee");
             $table->foreign("idEmployee")->references("idEmployee")->on("employee");
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('agentRecenseur');
+        Schema::dropIfExists('agentRecenseurs');
     }
 };

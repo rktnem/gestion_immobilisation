@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->smallInteger("idEmployee")->autoIncrement();
             $table->string("matricule", 7)->unique();
             $table->string('nom', 150);
             $table->string('prenom', 250);
             $table->string('poste', 150);
             $table->smallInteger("idDepartement");
-            $table->foreign("idDepartement")->references("idDepartement")->on("Departement");
+            $table->foreign("idDepartement")->references("idDepartement")->on("departements");
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employee');
+        Schema::dropIfExists('employees');
     }
 };

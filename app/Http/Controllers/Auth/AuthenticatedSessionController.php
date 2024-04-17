@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
+use App\Models\Departement;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Auth\LoginRequest;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -15,6 +17,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): Response
     {
+        // dd($request);
+        // $request->validate([
+        //     'matricule' => ['required'],
+        //     'pseudo' => ['required'],
+        // ])
+
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -25,14 +33,20 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(Request $request): Response
+    public function destroy(Request $request)
     {
+        $departements = Departement::all();
+        $users = User::all();
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return response()->noContent();
+        return to_route('login', [
+            'departements' => $departements,
+            'users' => $users,
+        ]);
     }
 }

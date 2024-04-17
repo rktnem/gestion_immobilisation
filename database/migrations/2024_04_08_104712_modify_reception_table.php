@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table("reception", function (Blueprint $table) {
+        Schema::table("receptions", function (Blueprint $table) {
             $table->dropForeign("reception_idpiece_foreign");
             $table->dropUnique(['idPiece']);
             $table->dropColumn("idPiece");
@@ -28,7 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table("reception", function (Blueprint $table) {
+        Schema::table("receptions", function (Blueprint $table) {
             $table->dropColumn("nombreLot");
             $table->dropColumn("objet");
             $table->dropColumn("referenceDAO");

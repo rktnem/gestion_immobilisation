@@ -7,7 +7,13 @@
         <h2>FTM</h2>
     </div>
     <h2>S'authentifier</h2>
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    <p>{{ $error }}</p>
+    @endforeach
+    @endif
     <form action={{ route('login') }} method="post">
+        @csrf
         <div class="form-group">
             <label for="matricule">Matricule</label>
             <input type="text" name="matricule" id="matricule" placeholder="Matricule..." autofocus>
@@ -19,10 +25,9 @@
         <div class="form-group">
             <label for="sigle">Departement</label>
             <select name="sigle" id="sigle">
-                <option value="DG">DG</option>
-                <option value="DAF">DAF</option>
-                <option value="DIGH">DIGH</option>
-                <option value="DMOSP">DMOSP</option>
+                @foreach ($departements as $departement)
+                <option value={{ $departement->sigle }}>{{ $departement->sigle }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">
@@ -40,5 +45,29 @@
         </div>
     </form>
 </section>
+
+@php
+$depart = json_encode($departements);
+$users = json_encode($users);
+@endphp
+
+<script>
+    let matricule = document.getElementById('matricule');
+    let departs = <?php echo $depart; ?>;
+    let users = <?php echo $users; ?>;
+
+    matricule.onkeypress = (e) => {
+        if(e.key === "Enter") {
+            e.preventDefault();
+            for(user of users) {
+                if(user.matricule === e.target.value) {
+                    $('#pseudo').val(user.pseudo);
+                    $('#sigle').val(user.sigle);
+                }
+            }
+            // console.log(JSON.parse("{{ $depart }}") 225263)
+        }
+    }
+</script>
 
 @endsection

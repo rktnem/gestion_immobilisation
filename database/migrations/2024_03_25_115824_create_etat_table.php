@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etat', function (Blueprint $table) {
+        Schema::create('etats', function (Blueprint $table) {
             $table->smallInteger("idEtat")->autoIncrement();
             $table->string("typeEtat", 10);
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etat');
+        Schema::dropIfExists('etats');
     }
 };

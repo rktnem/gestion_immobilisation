@@ -60,7 +60,12 @@
         </div>
         <div>
             <button>Nomenjanahary <span>&rsaquo;</span></button>
-            <span class="logout"><a href="">Deconnexion</a></span>
+            <span class="logout">
+                <form action={{ route('logout') }} method="post">
+                    @csrf
+                    <input type="submit" value="Deconnexion">
+                </form>
+            </span>
         </div>
     </ul>
 </nav>
