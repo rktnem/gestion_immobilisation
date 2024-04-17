@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("referenceDAO", 30);
             $table->string("objet", 150);
             $table->smallInteger("nombreLot");
+            $table->timestamps();
         });
     }
 
