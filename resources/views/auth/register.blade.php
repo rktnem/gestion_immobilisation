@@ -17,6 +17,9 @@
         <div class="form-register">
             <div class="form-user">
                 <div class="form-group">
+                    <input type="hidden" name="id_emp" id="id_emp">
+                </div>
+                <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" name="name" id="name" placeholder="Nom...">
                 </div>
@@ -81,6 +84,7 @@ $employee = json_encode($employees);
             e.preventDefault();
             for(employee of employees) {
                 if(employee.matricule === e.target.value) {
+                    $('#id_emp').val(employee.idEmployee);
                     $('#name').val(employee.nom);
                     $('#last_name').val(employee.prenom);
                     $('#sigle').val(departs[employee.idDepartement - 1].sigle);                    $('#departement').val(departs[employee.idDepartement - 1].departement);

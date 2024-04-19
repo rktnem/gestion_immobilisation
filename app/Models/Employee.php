@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Departement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Employee extends Model
 {
@@ -28,8 +29,8 @@ class Employee extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
+    public function user()
     {
-        return $this->hasOne(User::class, 'idEmployee');;
+        return $this->belongsTo(User::class, 'idEmployee');;
     }
 }

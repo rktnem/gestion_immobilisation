@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ficheDetenteurs', function (Blueprint $table) {
+        Schema::create('fiche_detenteurs', function (Blueprint $table) {
             $table->smallInteger('idFicheDetenteur')->autoIncrement();
             $table->smallInteger("quantite");
             $table->foreignId("idEmployee")->constrained()->onDelete('cascade');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ficheDetenteurs');
+        Schema::dropIfExists('fiche_detenteurs');
     }
 };

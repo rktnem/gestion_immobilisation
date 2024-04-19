@@ -5,74 +5,76 @@
         <input type="hidden" name="typeEntree" value={{ $type }}>
         <div class="matiere-form">
             <div class="form-group">
-                <label for="">Designation de la matiere</label>
-                <input type="text" name="name" id="" placeholder="Designation de la matière..."
+                <label for="name">Designation de la matiere</label>
+                <input type="text" name="name" id="name" placeholder="Designation de la matière..."
                     style="min-width: 400px">
             </div>
             <div class="form-group">
-                <label for="">Prix de l'unité</label>
-                <input type="text" name="price" id="" placeholder="Prix de l'unité... (Ar)" style="min-width: 200px">
+                <label for="price">Prix de l'unité</label>
+                <input type="text" name="price" id="price" placeholder="Prix de l'unité... (Ar)"
+                    style="min-width: 200px">
             </div>
             <div class="form-group">
-                <label for="">Quantité</label>
-                <input type="number" name="name" id="" placeholder="Quantité..." style="width: 75px">
+                <label for="quantite-global">Quantité</label>
+                <input type="number" name="quantite-global" id="quantite-global" placeholder="Quantité..."
+                    style="width: 75px">
             </div>
             <div class="form-group">
-                <label for="">Espèce unité</label>
-                <select name="unit" id="">
-                    <option value="">piece</option>
-                    <option value="">pacquet</option>
+                <label for="unite">Espèce unité</label>
+                <select name="unite" id="unite">
+                    @foreach ($unites as $unite)
+                    <option value={{ $unite->idEspeceUnite }}>{{ $unite->typeUnite }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
-                <label for="">Nomenclature</label>
-                <select name="nomenclature" id="">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                    <option value="">5</option>
-                    <option value="">6</option>
-                    <option value="">7</option>
+                <label for="nomenclature">Nomenclature</label>
+                <select name="nomenclature" id="nomenclature">
+                    @foreach ($classes as $classe)
+                    <option value={{ $classe->idCategorie }} {{ ($classe->classe === 'classe 2' ? 'selected' : '') }}
+                        >{{ $classe->classe }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
                 <label for="">Mode d'acquisition</label>
-                <select name="mode" id="">
-                    <option value="">Titre honnereux</option>
-                    <option value="">Titre de don</option>
-                    <option value="">Titre de transfert</option>
+                <select name="typeEntree" id="typeEntree">
+                    @foreach ($types as $type)
+                    <option value={{ $type->idTypeEntree }}>{{ $type->typeEntree }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
-                <label for="">Rubrique</label>
-                <select name="rubrique" id="">
-                    <option value="">Materiel informatique</option>
-                    <option value="">Materiel de bureau</option>
-                    <option value="">Machine</option>
+                <label for="rubrique">Rubrique</label>
+                <select name="rubrique" id="rubrique">
+                    @foreach ($amortissements as $amortissement)
+                    <option value='{{ $amortissement->idTauxAmortissement }}''>{{ $amortissement->rubrique }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
-                <label for="">Référence du bon de livraison</label>
-                <input type="text" name="ref" id="" placeholder="Référence du bon de livraison..." style="width: 100px">
+                <label for="bon-livraison">Référence du bon de livraison</label>
+                <input type="text" name="bon-livraison" id="bon-livraison"
+                    placeholder="Référence du bon de livraison..." style="width: 100px">
             </div>
             <div class="form-group">
-                <label for="">Numero de facture</label>
-                <input type="text" name="facture" id="" placeholder="Numero de facture..." style="width: 100px">
+                <label for="facture">Numero de facture</label>
+                <input type="text" name="facture" id="facture" placeholder="Numero de facture..." style="width: 100px">
             </div>
             <div class="form-group">
-                <label for="">Societe fournisseur</label>
-                <input type="text" name="fournisseur" id="" placeholder="Societe fournisseur..."
+                <label for="fournisseur">Societe fournisseur</label>
+                <input type="text" name="fournisseur" id="fournisseur" placeholder="Societe fournisseur..."
                     style="min-width: 200px">
             </div>
             <div class="form-group">
-                <label for="">Taux d'ammortissement</label>
-                <input type="text" name="taux" id="" placeholder="Taux d'ammortissement... (en %/an)"
-                    style="width: 75px">
+                <label for="taux">Taux d' ammortissement</label>
+                        <input type="text" name="taux" id="taux" placeholder="Taux d'ammortissement... (en %/an)"
+                            style="width: 75px">
             </div>
             <div class="form-group">
-                <label for="">Observation</label>
-                <textarea name="observation" id="" cols="30" rows="5" placeholder="Observation..."></textarea>
+                <label for="observation">Observation</label>
+                <textarea name="observation" id="observation" cols="30" rows="5"
+                    placeholder="Observation..."></textarea>
             </div>
         </div>
     </div>
@@ -104,3 +106,19 @@
         <input type="submit" value="ENREGISTRER">
     </div>
 </form>
+
+@php
+$taux = json_encode($amortissements);
+@endphp
+
+<script>
+    // Auto remplir les champs associes aux compte d'amortissement
+    let rubrique = document.getElementById('rubrique');
+    let taux = <?php echo $taux; ?>;
+
+    rubrique.addEventListener('change', () => {
+        let current_value = $("#rubrique option:selected").val();
+        let current_taux = taux[current_value - 1].taux;
+        $('#taux').val(current_taux+' %');
+    })
+</script>

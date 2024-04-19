@@ -7,6 +7,7 @@ use App\Models\Employee;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -27,9 +28,8 @@ class User extends Authenticatable
         'matricule',
         'poste',
         'sigle',
+        'idEmployee',
     ];
-
-    protected $guarded = ['idEmployee'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -58,6 +58,6 @@ class User extends Authenticatable
      */
     public function employee()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->hasOne(Employee::class, 'idEmployee');
     }
 }

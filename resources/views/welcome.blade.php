@@ -10,14 +10,14 @@
         @if (session()->has("success"))
         <x-success :success="session()->get('success')"></x-success>
         @endif
-        <h1>Bienvenue Mr/Mme {{ Auth::user()->pseudo }}</h1>
+        <h1>Bienvenue {{ (Auth::user()->employee->genre === 'Male') ? 'Mr' : 'Mme' }} {{ Auth::user()->pseudo }}</h1>
         <p>
             De nouveaux immobilisations, selectioner
             le mode d'acquisition de celui-ci
         </p>
         <form action="" method="POST" action={{ route('newInsert.reception') }}>
             @csrf
-            <select name="typeEntree" id="">
+            <select name="typeEntree" id="typeEntree">
                 <option value="achat">Titre honnereux</option>
                 <option value="don">Titre de don</option>
                 <option value="transfert">Titre de transfert</option>

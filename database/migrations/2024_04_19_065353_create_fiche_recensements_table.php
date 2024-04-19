@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ficheRecensements', function (Blueprint $table) {
+        Schema::create('fiche_recensements', function (Blueprint $table) {
             $table->smallInteger('idFicheRecensement')->autoIncrement();
             $table->date("dateRecensement");
             $table->text("observation");
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ficheRecensements');
+        Schema::dropIfExists('fiche_recensements');
     }
 };

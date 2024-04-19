@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->smallInteger("idCategorie")->autoIncrement();
-            $table->tinyInteger("nomenclature");
+            $table->string('classe', 100);
             $table->timestamps();
 
         });

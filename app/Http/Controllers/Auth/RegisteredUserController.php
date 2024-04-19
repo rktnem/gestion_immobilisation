@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): Response
+    public function store(Request $request)
     {
         // dd($request);
         $request->validate([
@@ -43,12 +43,13 @@ class RegisteredUserController extends Controller
         'matricule' => $request->matricule,
         'sigle' => $request->sigle,
         'poste' => $request->poste,
+        'idEmployee' => $request->id_emp,
     ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return response()->noContent();
+        return to_route('login');
     }
 }

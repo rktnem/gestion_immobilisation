@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tauxAmortissements', function (Blueprint $table) {
-            $table->smallInteger("idTauxAmortissement")->autoIncrement();
-            $table->string("rubrique", 200);
-            $table->tinyInteger("taux");
+        Schema::create('sous_matieres', function (Blueprint $table) {
+            $table->smallInteger("idSousMatiere")->autoIncrement();
+            $table->date("datePriseEnCharge");
+            $table->foreignId("idEtat")->constrained()->onDelete('cascade');
+            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tauxAmortissements');
+        Schema::dropIfExists('sous_matieres');
     }
 };

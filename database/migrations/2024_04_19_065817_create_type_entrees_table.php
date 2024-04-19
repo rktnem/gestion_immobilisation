@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('typeEntrees', function (Blueprint $table) {
+        Schema::create('type_entrees', function (Blueprint $table) {
             $table->smallInteger("idTypeEntree")->autoIncrement();
             $table->string("typeEntree", 50);
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('typeEntrees');
+        Schema::dropIfExists('type_entrees');
     }
 };

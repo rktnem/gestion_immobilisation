@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sousMatieres', function (Blueprint $table) {
-            $table->smallInteger("idSousMatiere")->autoIncrement();
-            $table->date("datePriseEnCharge");
-            $table->foreignId("idEtat")->constrained()->onDelete('cascade');
-            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
+        Schema::create('taux_amortissements', function (Blueprint $table) {
+            $table->smallInteger("idTauxAmortissement")->autoIncrement();
+            $table->string("rubrique", 200);
+            $table->float('taux');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sousMatieres');
+        Schema::dropIfExists('taux_amortissements');
     }
 };

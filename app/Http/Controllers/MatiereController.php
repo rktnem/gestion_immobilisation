@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
+use App\Models\TypeEntree;
+use App\Models\EspeceUnite;
 use Illuminate\Http\Request;
+use App\Models\TauxAmortissement;
 use Illuminate\Support\Facades\Route;
 
 class MatiereController extends Controller
@@ -19,13 +23,6 @@ class MatiereController extends Controller
     }
 
     public function saveReception(Request $request) {
-        // $rules = [
-        //     'ref' => ['required','max:1'],
-        //     'number' => ['required','max:100'],
-        // ];
-
-        // $request->validate($rules);
-
         $type = $request->typeEntree;
 
         return view('pages/newInsert', [
@@ -35,11 +32,20 @@ class MatiereController extends Controller
     }
 
     public function showInsert(Request $request) {
+        $amortissements = TauxAmortissement::all();
+        $classes = Categorie::all();
+        $types = TypeEntree::all();
+        $unites = EspeceUnite::all();
+
         $type = $request->typeEntree;
 
         return view('pages/newInsert', [
                 "type" => $type,
-                "step" => "insertion"
+                "step" => "insertion",
+                "amortissements" => $amortissements,
+                "classes" => $classes,
+                'types' => $types,
+                'unites' => $unites,
         ]);
     }
 

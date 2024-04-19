@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tableAmortissements', function (Blueprint $table) {
+        Schema::create('table_amortissements', function (Blueprint $table) {
             $table->smallInteger("idTableAmortissement")->autoIncrement();
             $table->integer("amortissementAnterieur");
             $table->integer("dotationExercice");
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tableAmortissements');
+        Schema::dropIfExists('table_amortissements');
     }
 };
