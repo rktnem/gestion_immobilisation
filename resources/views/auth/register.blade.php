@@ -87,6 +87,7 @@ $employee = json_encode($employees);
                     $('#id_emp').val(employee.idEmployee);
                     $('#name').val(employee.nom);
                     $('#last_name').val(employee.prenom);
+                    $('#email').val(employee.email);
                     $('#sigle').val(departs[employee.idDepartement - 1].sigle);                    $('#departement').val(departs[employee.idDepartement - 1].departement);
                     $('#poste').val(employee.poste);     
                 }

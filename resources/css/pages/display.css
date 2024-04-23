@@ -64,7 +64,8 @@
 .achat-section,
 .owner-section,
 .rapport-recensement,
-.inventaire-attente {
+.inventaire-attente,
+.demolition-section {
     background-color: white;
     margin: 30px 20px 0 20px;
     padding: 15px 30px;
@@ -205,49 +206,59 @@
     text-align: left;
 }
 
-.rapport-recensement {
+.rapport-recensement,
+.demolition-section {
     background-color: inherit;
 }
-.rapport-recensement > div:first-child {
+.rapport-recensement > div:first-child,
+.demolition-content > div:first-child {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 15px;
 }
-.rapport-recensement form > div:last-child {
+.rapport-recensement form > div:last-child,
+.demolition-content form > div:last-child {
     display: flex;
     justify-content: center;
 }
-.rapport-recensement form > div {
+.rapport-recensement form > div,
+.demolition-content form > div {
     display: grid;
     grid-template-columns: 2fr repeat(4, 1fr);
     grid-gap: 15px;
 }
-.rapport-recensement form > div .rapport {
+.rapport-recensement form > div .rapport,
+.demolition-content form > div .rapport {
     padding: 10px 25px;
     margin-bottom: 15px;
     background-color: white;
     border-radius: var(--border-radius);
 }
-.rapport-recensement form > div .rapport h3 {
+.rapport-recensement form > div .rapport h3,
+.demolition-content form > div .rapport h3 {
     margin-bottom: 15px;
 }
-.rapport-recensement form > div .rapport h3 span:first-child {
+.rapport-recensement form > div .rapport h3 span:first-child,
+.demolition-content form > div .rapport h3 span:first-child {
     color: white;
     background-color: var(--second);
     padding: 5px;
     border-radius: 50%;
     margin-right: 7px;
 }
-.rapport-recensement form > div > div .rapport-input {
+.rapport-recensement form > div > div .rapport-input,
+.demolition-content form > div > div .rapport-input {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 15px;
 }
-.rapport-recensement form > div > div .rapport-input .form-group {
+.rapport-recensement form > div > div .rapport-input .form-group,
+.demolition-content form > div > div .rapport-input .form-group {
     display: flex;
     flex-direction: column;
 }
-.rapport-recensement form > div > div .rapport-input .form-group label {
+.rapport-recensement form > div > div .rapport-input .form-group label,
+.demolition-content form > div > div .rapport-input .form-group label {
     font-size: 14px;
     margin-bottom: 5px;
 }

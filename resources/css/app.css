@@ -119,7 +119,6 @@ th {
 section::-webkit-scrollbar {
     display: block;
     width: 5px;
-    background-color: white;
 }
 section::-webkit-scrollbar-thumb {
     background-color: var(--primary);

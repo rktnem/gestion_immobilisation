@@ -7,6 +7,7 @@ use App\Models\TypeEntree;
 use App\Models\EspeceUnite;
 use Illuminate\Http\Request;
 use App\Models\TauxAmortissement;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 class MatiereController extends Controller
@@ -51,8 +52,9 @@ class MatiereController extends Controller
 
     public function saveMatiere(Request $request) {
         $type = $request->typeEntree;
+        $redirect = redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
 
-        return redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
+        return $redirect;
     }
 
     // Fin des fonctions controller pour l'INSERTION
@@ -61,6 +63,8 @@ class MatiereController extends Controller
     // Les fonctions controller pour l'INVENTAIRE des matieres
 
     public function showInventaire() {
+        // dd(Auth::user()->poste);
+
         return view('pages/displayImmo');
     }
 
