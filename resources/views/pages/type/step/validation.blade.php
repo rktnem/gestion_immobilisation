@@ -1,7 +1,7 @@
 <h3>Validation du PV de reception</h3>
 <form class="validation-list" action={{ route('newInsert.insert') }} method="GET">
     @csrf
-    <input type="hidden" name="typeEntree" value={{ $type }}>
+    <input type="hidden" name="number" value={{ $number }}>
     <div class="validation-item">
         <div>
             <h4>En attente de validation de mr Toby</h4>

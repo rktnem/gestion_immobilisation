@@ -2,7 +2,7 @@
     @csrf
     <div class="detail-matiere">
         <h3>Lot n°1: Ordinateur portable</h3>
-        <input type="hidden" name="typeEntree" value={{ $type }}>
+        <input type="hidden" name="number" value={{ $number }}>
         <div class="matiere-form">
             <div class="form-group">
                 <label for="name">Designation de la matiere</label>

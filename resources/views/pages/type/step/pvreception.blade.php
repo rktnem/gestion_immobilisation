@@ -3,7 +3,6 @@
     @csrf
     <div class="form">
         <div class="form-general">
-            <input type="hidden" name="typeEntree" value={{ $type }}>
             <div class="form-group">
                 <label for="ref">Réference du DAO</label>
                 <input type="text" name="ref" id="" style="max-width: 100px;" placeholder="Réference...">

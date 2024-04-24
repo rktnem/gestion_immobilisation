@@ -59,6 +59,8 @@
                     </span>
                     <span>Grand-livre</span>
                 </a>
+                {{-- Analyser si l'utilisateur est autorise a utiliser cette fonctionnalite --}}
+                @if (Gate::allows('is-allow'))
                 <a href="#" id="wait">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
@@ -70,6 +72,7 @@
                     <span>En attente</span>
                     <span class="badge">10</span>
                 </a>
+                @endif
             </div>
         </li>
         <li class="side-item">

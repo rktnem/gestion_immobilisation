@@ -18,17 +18,18 @@ class MatiereController extends Controller
         $type = $request->typeEntree;
 
         return view('pages/newInsert', [
-            "type" => $type,
+            "type" => 'achat',
             "step" => "pvreception"
         ]);
     }
 
     public function saveReception(Request $request) {
-        $type = $request->typeEntree;
+        $number = $request->number;
 
         return view('pages/newInsert', [
-            "type" => $type,
-            "step" => "validation"
+            'type' => 'achat',
+            "number" => $number,
+            "step" => "validation",
         ]);
     }
 
@@ -38,10 +39,11 @@ class MatiereController extends Controller
         $types = TypeEntree::all();
         $unites = EspeceUnite::all();
 
-        $type = $request->typeEntree;
+        $number = $request->number;
 
         return view('pages/newInsert', [
-                "type" => $type,
+                'type' => 'achat',
+                "number" => $number,
                 "step" => "insertion",
                 "amortissements" => $amortissements,
                 "classes" => $classes,
@@ -51,10 +53,24 @@ class MatiereController extends Controller
     }
 
     public function saveMatiere(Request $request) {
-        $type = $request->typeEntree;
-        $redirect = redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
+        $number = $request->number;
 
-        return $redirect;
+        $number = $number - 1;
+
+        if($number != 0) {
+            $amortissements = TauxAmortissement::all();
+            $classes = Categorie::all();
+            $types = TypeEntree::all();
+            $unites = EspeceUnite::all();
+
+            return redirect()->route('newInsert.insert', [
+                'type' => 'achat',
+                'number' => $number,
+            ]);
+        }
+        else {
+            return redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
+        }
     }
 
     // Fin des fonctions controller pour l'INSERTION
