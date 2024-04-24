@@ -405,19 +405,19 @@ CREATE TABLE IF NOT EXISTS `matieres` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `matiere_reception`
+-- Structure de la table `matiere_receptions`
 --
 
-DROP TABLE IF EXISTS `matiere_reception`;
-CREATE TABLE IF NOT EXISTS `matiere_reception` (
+DROP TABLE IF EXISTS `matiere_receptions`;
+CREATE TABLE IF NOT EXISTS `matiere_receptions` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `idMatiere` bigint UNSIGNED NOT NULL,
   `idReception` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `matiere_reception_idmatiere_foreign` (`idMatiere`),
-  KEY `matiere_reception_idreception_foreign` (`idReception`)
+  KEY `matiere_receptions_idmatiere_foreign` (`idMatiere`),
+  KEY `matiere_receptions_idreception_foreign` (`idReception`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

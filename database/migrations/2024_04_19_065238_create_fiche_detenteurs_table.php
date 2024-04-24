@@ -13,10 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fiche_detenteurs', function (Blueprint $table) {
-            $table->smallInteger('idFicheDetenteur')->autoIncrement();
+            $table->id();
             $table->smallInteger("quantite");
-            $table->foreignId("idEmployee")->constrained()->onDelete('cascade');
-            $table->foreignId("idSousMatiere")->constrained()->onDelete('cascade');
+            $table->foreignId("employee_id")->constrained()->onDelete('cascade');
+            $table->foreignId("sous_matiere_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,15 +15,12 @@
             De nouveaux immobilisations, selectioner
             le mode d'acquisition de celui-ci
         </p>
-        <form action="" method="POST" action={{ route('newInsert.reception') }}>
-            @csrf
-            <select name="typeEntree" id="typeEntree">
-                <option value="achat">Titre honnereux</option>
-                <option value="don">Titre de don</option>
-                <option value="transfert">Titre de transfert</option>
-            </select>
-            <input type="submit" value="INSCRIRE">
-        </form>
+        <select name="typeEntree" id="typeEntree">
+            <option value="achat">Titre honnereux</option>
+            <option value="don">Titre de don</option>
+            <option value="transfert">Titre de transfert</option>
+        </select>
+        <a id="to_reception" href={{ route('reception.create', ['type'=> 'don']) }}>INSCRIRE</a>
     </div>
     <div class="menu-section">
         <ul>
@@ -82,5 +79,22 @@
         </ul>
     </div>
 </div>
+
+<script>
+    let to_reception = document.getElementById('to_reception');
+    let type = document.getElementById('typeEntree');
+
+    type.addEventListener('change', () => {
+        let txt = "akoho ':type'"
+        let val = type.value;
+        let href;
+
+        href = "{{ route('reception.create', ['type' => 'new_type']) }}";
+        href = href.replace('new_type', val);
+
+        to_reception.setAttribute('href', href);
+        console.log(to_reception.getAttribute('href'));
+    });
+</script>
 
 @endsection

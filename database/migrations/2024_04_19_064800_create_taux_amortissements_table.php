@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('taux_amortissements', function (Blueprint $table) {
-            $table->smallInteger("idTauxAmortissement")->autoIncrement();
+            $table->id();
             $table->string("rubrique", 200);
             $table->float('taux');
             $table->timestamps();

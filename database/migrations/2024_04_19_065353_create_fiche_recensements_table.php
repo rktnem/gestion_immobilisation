@@ -13,14 +13,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fiche_recensements', function (Blueprint $table) {
-            $table->smallInteger('idFicheRecensement')->autoIncrement();
+            $table->id();
             $table->date("dateRecensement");
             $table->text("observation");
             $table->string("exercice", 15);
-            $table->foreignId("idSousMatiere")->constrained()->onDelete('cascade');
-            $table->foreignId("idExcedent")->constrained()->onDelete('cascade');
-            $table->foreignId("idDeficit")->constrained()->onDelete('cascade');
-            $table->foreignId("idEtat")->constrained()->onDelete('cascade');
+            $table->foreignId("sous_matiere_id")->constrained()->onDelete('cascade');
+            $table->foreignId("excedent_id")->constrained()->onDelete('cascade');
+            $table->foreignId("deficit_id")->constrained()->onDelete('cascade');
+            $table->foreignId("etat_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

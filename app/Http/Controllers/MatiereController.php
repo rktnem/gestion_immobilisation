@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Matiere;
 use App\Models\Categorie;
+use App\Models\Reception;
 use App\Models\TypeEntree;
 use App\Models\EspeceUnite;
 use Illuminate\Http\Request;
@@ -14,21 +17,69 @@ class MatiereController extends Controller
 {
     // Les fonctions controller pour l'INSERTION de nouveau matiere
 
-    public function newInsert(Request $request) {
-        $type = $request->typeEntree;
+    public function createReception(Request $request) {
+        $type = $request->get('type');
 
         return view('pages/newInsert', [
-            "type" => 'achat',
+            "type" => $type,
             "step" => "pvreception"
         ]);
     }
 
-    public function saveReception(Request $request) {
+    public function storeReception(Request $request) {
         $number = $request->number;
 
+        // Inserer dans la base les donnees de la table receptions
+        $reception = Reception::create([
+            'referenceDAO' => $request->ref,
+            'objet' => $request->objet,
+            'nombreLot' => $request->number,
+        ]);
+        
+        // Inserer une matiere en boucle
+        for($i = 1; $i <= $number; $i++) {
+            $designation = "designation-$i";
+            $specification = "specification-$i";
+            $minimal = "prix-minimal-$i";
+            $maximal = "prix-maximal-$i";
+            $quantite = "quantite-$i";
+
+            $matiere = Matiere::create([
+                'designation' => $request->$designation,
+                'specification' => $request->$specification,
+                'dateAcquisition' => Carbon::now(),
+                'prix' => 0,
+                'prixMinimal' => $request->$minimal,
+                'prixMaximal' => $request->$maximal,
+                'societeAchat' => '',
+                'quantite' => $request->$quantite,
+                'dateActualisation' => Carbon::now(),
+                'dateSortie' => Carbon::now(),
+                'numeroFolio' => 1,
+                'observation' => '',
+                'etape' => 1,
+                'reception_id' => $reception->id,
+                'type_entree_id' => 0,
+                'table_amortissement_id' => 0,
+                'espece_unite_id' => 0,
+                'categorie_id' => 0,
+            ]);
+        }
+
+        if($matiere && $reception) {
+            return to_route('validate.show', [
+                'number' => $number,
+            ]);
+        }
+        else {
+            return redirect()->back();
+        }
+    }
+
+    public function showValidate(Request $request) {
         return view('pages/newInsert', [
             'type' => 'achat',
-            "number" => $number,
+            "number" => $request->get('number'),
             "step" => "validation",
         ]);
     }
@@ -58,10 +109,6 @@ class MatiereController extends Controller
         $number = $number - 1;
 
         if($number != 0) {
-            $amortissements = TauxAmortissement::all();
-            $classes = Categorie::all();
-            $types = TypeEntree::all();
-            $unites = EspeceUnite::all();
 
             return redirect()->route('newInsert.insert', [
                 'type' => 'achat',
@@ -79,8 +126,6 @@ class MatiereController extends Controller
     // Les fonctions controller pour l'INVENTAIRE des matieres
 
     public function showInventaire() {
-        // dd(Auth::user()->poste);
-
         return view('pages/displayImmo');
     }
 

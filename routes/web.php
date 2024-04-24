@@ -23,10 +23,14 @@ Route::middleware(['auth'])->group(function () {
     
     Route::controller(MatiereController::class)->group(function () {
         // Cette portion est le route de l'accueil et d'ajout de nouveau matiere
-        Route::post('/', 'newInsert')->name('newInsert.reception')->middleware('is.person.public');
-        Route::post('/achat/validation', 'saveReception')->name('newInsert.validate')->middleware(['is.person.public', 'is.depositaire.comptable']);
-        Route::get('/achat/insertion', 'showInsert')->name('newInsert.insert')->middleware('is.depositaire.comptable');
-        Route::post('/achat/insertion', 'saveMatiere')->name('newInsert.save');
+        Route::get('/reception', 'createReception')->name('reception.create')->middleware('is.person.public');
+        Route::post('/reception', 'storeReception')->name('reception.store')->middleware('is.person.public');
+
+        Route::get('/achat/validation', 'showValidate')->name('validate.show')->middleware(['is.person.public', 'is.depositaire.comptable']);
+        Route::post('/achat/validation', 'storeValidate')->name('validate.store')->middleware(['is.person.public','is.depositaire.comptable']);
+
+        Route::get('/achat/insertion', 'createMatiere')->name('matiere.create')->middleware('is.depositaire.comptable');
+        Route::post('/achat/insertion', 'storeMatiere')->name('matiere.store')->middleware('is.depositaire.comptable');
         
         // Routes de la section inventaire
         Route::middleware('is.depositaire.comptable')->group(function () {

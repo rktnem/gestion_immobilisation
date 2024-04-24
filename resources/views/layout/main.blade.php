@@ -1,9 +1,12 @@
 @php
+use Carbon\Carbon;
+use App\Models\Matiere;
 use Illuminate\Support\Facades\Route;
 
 $route = Route::current()->getName();
 $uri = Route::current()->uri();
 
+$matieres = Matiere::where('etape', 1)->get();
 @endphp
 
 <!DOCTYPE html>
@@ -56,14 +59,19 @@ $uri = Route::current()->uri();
                     </div>
                 </div>
                 <div class="waiting-content">
-                    <div class="waiting-box">
+                    @foreach ($matieres as $matiere)
+                    <div class="waiting-box" onclick="window.location.href='{{ route('validate.show', ['id' => 1]) }}'">
                         <h4>Validation du PV de reception</h4>
-                        <p><strong>Convention N°:</strong> 04-22 FTM</p>
-                        <p><strong>Objet:</strong> Acquisition et reception de materiel informatique repartit en deux
+                        <p><strong>Convention N°:</strong> {{ $matiere->reception->referenceDAO }}</p>
+                        <p><strong>Objet:</strong> Acquisition et reception de {{ $matiere->reception->objet }} repartit
+                            en deux
                             lot
                         </p>
-                        <p><strong>Declaré le:</strong> 12 décembre 2014</p>
+                        <p><strong>Declaré le:</strong> {{
+                            Carbon::parse($matiere->reception->created_at)->format('d M. Y') }}
+                        </p>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -12,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('matieres', function (Blueprint $table) {
-            $table->smallInteger("idMatiere")->autoIncrement();
+            $table->id();
             $table->string("designation");
             $table->string("specification")->nullable()->default('Aucune specification');
             $table->date("dateAcquisition");
@@ -20,17 +21,17 @@ return new class extends Migration
             $table->integer("prixMinimal")->nullable()->default(0);
             $table->integer("prixMaximal")->nullable()->default(0);
             $table->string("societeAchat", 50);
-            $table->string("dossierReference", 4);
             $table->smallInteger("quantite");
             $table->dateTime("dateActualisation");
             $table->date("dateSortie");
             $table->smallInteger("numeroFolio");
             $table->text("observation");
             $table->smallInteger('etape');
-            $table->foreignId("idTypeEntree")->constrained()->onDelete('cascade');
-            $table->foreignId("idTableAmortissement")->constrained()->onDelete('cascade');
-            $table->foreignId("idEspeceUnite")->constrained()->onDelete('cascade');
-            $table->foreignId("idCategorie")->constrained()->onDelete('cascade');
+            $table->foreignId("reception_id")->constrained()->onDelete("cascade");
+            $table->foreignId("type_entree_id")->constrained()->onDelete('cascade');
+            $table->foreignId("table_amortissement_id")->constrained()->onDelete('cascade');
+            $table->foreignId("espece_unite_id")->constrained()->onDelete('cascade');
+            $table->foreignId("categorie_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

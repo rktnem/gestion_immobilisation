@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('espece_unites', function (Blueprint $table) {
-            $table->smallInteger("idEspeceUnite")->autoIncrement();
+            $table->id();
             $table->string("typeUnite", 20);
             $table->timestamps();
         });

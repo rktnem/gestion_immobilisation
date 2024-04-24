@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('table_amortissements', function (Blueprint $table) {
-            $table->smallInteger("idTableAmortissement")->autoIncrement();
+            $table->id();
             $table->integer("amortissementAnterieur");
             $table->integer("dotationExercice");
-            $table->foreignId("idTauxAmortissement")->constrained()->onDelete('cascade');
+            $table->foreignId("taux_amortissement_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

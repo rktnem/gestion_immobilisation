@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('matricule', 7);
             $table->string('poste', 250);
             $table->string('sigle', 100);
-            $table->foreignId('idEmployee')->constrained();
+            $table->foreignId('employee_id')->constrained();
             $table->rememberToken();
             $table->timestamps();
         });

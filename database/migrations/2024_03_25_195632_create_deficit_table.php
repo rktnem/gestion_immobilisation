@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('deficits', function (Blueprint $table) {
-            $table->integer("idDeficit")->autoIncrement();
+            $table->id();
             $table->integer("quantite");
-            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
+            $table->foreignId("matiere_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

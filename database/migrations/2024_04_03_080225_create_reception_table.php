@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('receptions', function (Blueprint $table) {
-            $table->smallInteger('idReception')->autoIncrement();
+            $table->id();
             $table->string("referenceDAO", 30);
             $table->string("objet", 150);
             $table->smallInteger("nombreLot");

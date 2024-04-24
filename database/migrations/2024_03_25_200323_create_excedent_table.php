@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('excedents', function (Blueprint $table) {
-            $table->integer("idExcedent")->autoIncrement();
+            $table->id();
             $table->integer("quantite");
-            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
+            $table->foreignId("matiere_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

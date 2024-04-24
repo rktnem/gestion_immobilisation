@@ -29,17 +29,17 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `departements`;
 CREATE TABLE IF NOT EXISTS `departements` (
-  `idDepartement` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `departement` varchar(150) DEFAULT NULL,
   `sigle` varchar(20) NOT NULL,
-  PRIMARY KEY (`idDepartement`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `tbldepartments`
 --
 
-INSERT INTO `departements` (`idDepartement`, `departement`, `sigle`) VALUES
+INSERT INTO `departements` (`id`, `departement`, `sigle`) VALUES
 (1, 'Direction Administrative et Financière', 'DAF'),
 (2, 'Direction Generale', 'DG'),
 (3, 'Direction Infrastructure Géographique et Hydrographique', 'DIGH'),

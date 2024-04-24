@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `employees`;
 CREATE TABLE IF NOT EXISTS `employees` (
-  `idEmployee` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `matricule` varchar(10) NOT NULL,
   `nom` varchar(150) NOT NULL,
   `prenom` varchar(250) NOT NULL,
@@ -37,14 +37,14 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `genre` varchar(100) NOT NULL,
   `poste` varchar(255) NOT NULL,
   `idDepartement` varchar(200) NOT NULL,
-  PRIMARY KEY (`idEmployee`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `tblemployees`
 --
 
-INSERT INTO `employees` (`idEmployee`, `matricule`, `nom`, `prenom`, `email`, `genre`, `poste`, `idDepartement`) VALUES
+INSERT INTO `employees` (`id`, `matricule`, `nom`, `prenom`, `email`, `genre`, `poste`, `idDepartement`) VALUES
 (1, '335546', 'RANDRIAMANANA', 'Malala Fidèle', 'malala@gmail.com', 'Male', 'Directeur du DRPI', 4),
 (2, '318831', 'SOAMIAFARA ', 'Valivonintsoa', 'valivonintsoa@gmail.com', 'Female', 'Secretaire du DRPI', 4),
 (3,'255335','RAZANAHARIMAVO','Lalao','lalao@gmail.com','Female','Chef de service bureau des ventes', 4),

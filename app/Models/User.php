@@ -7,7 +7,6 @@ use App\Models\Employee;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -28,7 +27,7 @@ class User extends Authenticatable
         'matricule',
         'poste',
         'sigle',
-        'idEmployee',
+        'employee_id',
     ];
 
     /**
@@ -52,12 +51,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the employee associated with the User
+     * Get the employee that owns the User
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function employee()
     {
-        return $this->hasOne(Employee::class, 'idEmployee', 'idEmployee');
+        return $this->belongsTo(Employee::class);
     }
 }

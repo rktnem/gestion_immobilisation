@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
         'matricule' => $request->matricule,
         'sigle' => $request->sigle,
         'poste' => $request->poste,
-        'idEmployee' => $request->id_emp,
+        'employee_id' => $request->id_emp,
     ]);
 
         event(new Registered($user));

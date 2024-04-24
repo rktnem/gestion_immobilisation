@@ -1,5 +1,5 @@
 <h3>Renseigner le pv de reception</h3>
-<form action={{ route('newInsert.validate') }} method="POST">
+<form action={{ route('reception.store') }} method="POST">
     @csrf
     <div class="form">
         <div class="form-general">

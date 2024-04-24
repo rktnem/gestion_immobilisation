@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sous_matieres', function (Blueprint $table) {
-            $table->smallInteger("idSousMatiere")->autoIncrement();
+            $table->id();
             $table->date("datePriseEnCharge");
-            $table->foreignId("idEtat")->constrained()->onDelete('cascade');
-            $table->foreignId("idMatiere")->constrained()->onDelete('cascade');
+            $table->foreignId("etat_id")->constrained()->onDelete('cascade');
+            $table->foreignId("matiere_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

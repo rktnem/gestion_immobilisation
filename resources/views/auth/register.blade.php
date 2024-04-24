@@ -9,16 +9,14 @@
     <h2>Creer un compte</h2>
     @if ($errors->any())
     @foreach ($errors->all() as $error)
-    <p>{{ $error }}</p>
+    <x-error :error="$error"></x-error>
     @endforeach
     @endif
     <form action={{ route('register') }} method="post">
         @csrf
         <div class="form-register">
             <div class="form-user">
-                <div class="form-group">
-                    <input type="hidden" name="id_emp" id="id_emp">
-                </div>
+                <input type="hidden" name="id_emp" id="id_emp">
                 <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" name="name" id="name" placeholder="Nom...">
@@ -84,7 +82,7 @@ $employee = json_encode($employees);
             e.preventDefault();
             for(employee of employees) {
                 if(employee.matricule === e.target.value) {
-                    $('#id_emp').val(employee.idEmployee);
+                    $('#id_emp').val(employee.id);
                     $('#name').val(employee.nom);
                     $('#last_name').val(employee.prenom);
                     $('#email').val(employee.email);

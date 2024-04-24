@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('demolitions', function (Blueprint $table) {
-            $table->smallInteger("idType")->autoIncrement();
+            $table->id();
             $table->lineString("type", 15);
             $table->date("dateDemolition");
             $table->string("quantite", 50);
-            $table->smallInteger("idMatiere")->nullable(FALSE);
-            $table->foreign("idMatiere")->references("idMatiere")->on("matieres");
+            $table->foreignId('matiere_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

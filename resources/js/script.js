@@ -56,7 +56,7 @@ function formGroup(lot) {
         "</label>" +
         "</div>" +
         "<div>" +
-        "<input type='text' name='lot-" +
+        "<input type='text' name='designation-" +
         lot +
         "' id='' placeholder='Designation du lot n°" +
         lot +

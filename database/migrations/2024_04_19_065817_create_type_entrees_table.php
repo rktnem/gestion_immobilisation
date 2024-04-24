@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('type_entrees', function (Blueprint $table) {
-            $table->smallInteger("idTypeEntree")->autoIncrement();
+            $table->id();
             $table->string("typeEntree", 50);
             $table->timestamps();
         });
