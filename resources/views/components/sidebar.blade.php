@@ -68,7 +68,7 @@ $count = Matiere::where('etape', '<', 3)->get()->count();
                     </a>
                     {{-- Analyser si l'utilisateur est autorise a utiliser cette fonctionnalite --}}
                     @if (Gate::allows('is-allow'))
-                    <a href={{ route('inventaire.wait') }}>
+                    <a href={{ route('inventaire.wait') }} class="item-{{ isRoute('/inventaire.wait/i', $route) }}">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
                                 <path
