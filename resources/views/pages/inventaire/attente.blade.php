@@ -26,7 +26,10 @@ use Carbon\Carbon;
                     <p><strong>Designation:</strong> {{ $first->designation }} - {{$first->specification}}</p>
                     <p><strong>Convention N°:</strong> {{ $first->reception->referenceDAO }}</p>
                     <p><strong>Objet:</strong> {{ $first->reception->objet }} </p>
-                    <p><strong>Declaré le:</strong> {{ Carbon::parse($first->reception->created_at)->format('d M. Y') }}
+                    <p>
+                        <strong>Declaré le:</strong>
+                        {{ Carbon::parse($first->reception->created_at)->format('d M. Y') }} -
+                        {{ Carbon::parse($first->reception->created_at)->format('H:i') }}
                     </p>
                 </a>
             </div>
@@ -37,13 +40,16 @@ use Carbon\Carbon;
             <h4>Insertion des matieres</h4>
             @foreach ($matieres_second as $second)
             <div class="waiting-content">
-                <a class="waiting-box" href={{ route('validate.show', ['last_insert'=> $second->id]) }}>
+                <a class="waiting-box" href={{ route('matiere.create', ['last_insert'=> $second->id]) }}>
                     <p><strong>Designation:</strong> {{ $second->designation }}</p>
                     <p><strong>Convention N°:</strong> {{ $second->reception->objet }}</p>
                     <p><strong>Objet:</strong> Acquisition et reception de materiel informatique repartit
                         en deux lot
                     </p>
-                    <p><strong>Declaré le:</strong> {{ Carbon::parse($first->reception->created_at)->format('d M. Y') }}
+                    <p>
+                        <strong>Declaré le:</strong>
+                        {{ Carbon::parse($second->reception->created_at)->format('d M. Y') }} -
+                        {{ Carbon::parse($second->reception->created_at)->format('H:i') }}
                     </p>
                 </a>
             </div>

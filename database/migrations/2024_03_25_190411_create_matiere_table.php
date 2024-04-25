@@ -25,11 +25,14 @@ return new class extends Migration
             $table->dateTime("dateActualisation");
             $table->date("dateSortie");
             $table->smallInteger("numeroFolio");
+            $table->string("facture");
+            $table->string("bonLivraison");
             $table->text("observation");
             $table->smallInteger('etape');
             $table->smallInteger('validate')->default(0);
             $table->foreignId("reception_id")->constrained()->onDelete("cascade");
             $table->foreignId("type_entree_id")->constrained()->onDelete('cascade');
+            $table->foreignId("taux_amortissement_id")->constrained()->onDelete('cascade');
             $table->foreignId("table_amortissement_id")->constrained()->onDelete('cascade');
             $table->foreignId("espece_unite_id")->constrained()->onDelete('cascade');
             $table->foreignId("categorie_id")->constrained()->onDelete('cascade');

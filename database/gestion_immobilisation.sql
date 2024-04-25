@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 25 avr. 2024 à 06:04
+-- Généré le : jeu. 25 avr. 2024 à 11:33
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -30,11 +30,25 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `classe` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `classe` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `categories`
+--
+
+INSERT INTO `categories` (`id`, `classe`, `created_at`, `updated_at`) VALUES
+(1, 'classe 1', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(2, 'classe 2', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(3, 'classe 3', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(4, 'classe 4', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(5, 'classe 5', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(6, 'classe 6', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(7, 'classe 7', '2024-04-19 11:26:24', '2024-04-19 11:26:24'),
+(8, 'classe 8', '2024-04-19 11:26:24', '2024-04-19 11:26:24');
 
 -- --------------------------------------------------------
 
@@ -217,11 +231,19 @@ INSERT INTO `employees` (`id`, `matricule`, `nom`, `prenom`, `email`, `genre`, `
 DROP TABLE IF EXISTS `espece_unites`;
 CREATE TABLE IF NOT EXISTS `espece_unites` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `typeUnite` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `typeUnite` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `espece_unites`
+--
+
+INSERT INTO `espece_unites` (`id`, `typeUnite`, `created_at`, `updated_at`) VALUES
+(1, 'piece', '2024-04-19 08:19:15', '2024-04-19 08:19:15'),
+(2, 'nombre', '2024-04-19 08:19:15', '2024-04-19 08:19:15');
 
 -- --------------------------------------------------------
 
@@ -232,11 +254,21 @@ CREATE TABLE IF NOT EXISTS `espece_unites` (
 DROP TABLE IF EXISTS `etats`;
 CREATE TABLE IF NOT EXISTS `etats` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `typeEtat` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `typeEtat` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `etats`
+--
+
+INSERT INTO `etats` (`id`, `typeEtat`, `created_at`, `updated_at`) VALUES
+(1, 'Neuf', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
+(2, 'Bon', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
+(3, 'Abimé', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
+(4, 'Hors d\'usa', '2024-04-19 08:26:38', '2024-04-19 08:26:38');
 
 -- --------------------------------------------------------
 
@@ -338,11 +370,14 @@ CREATE TABLE IF NOT EXISTS `matieres` (
   `dateActualisation` datetime NOT NULL,
   `dateSortie` date NOT NULL,
   `numeroFolio` smallint NOT NULL,
+  `facture` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bonLivraison` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `observation` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `etape` smallint NOT NULL,
   `validate` smallint NOT NULL DEFAULT '0',
   `reception_id` bigint UNSIGNED NOT NULL,
   `type_entree_id` bigint UNSIGNED NOT NULL,
+  `taux_amortissement_id` bigint UNSIGNED NOT NULL,
   `table_amortissement_id` bigint UNSIGNED NOT NULL,
   `espece_unite_id` bigint UNSIGNED NOT NULL,
   `categorie_id` bigint UNSIGNED NOT NULL,
@@ -351,20 +386,11 @@ CREATE TABLE IF NOT EXISTS `matieres` (
   PRIMARY KEY (`id`),
   KEY `matieres_reception_id_foreign` (`reception_id`),
   KEY `matieres_type_entree_id_foreign` (`type_entree_id`),
+  KEY `matieres_taux_amortissement_id_foreign` (`taux_amortissement_id`),
   KEY `matieres_table_amortissement_id_foreign` (`table_amortissement_id`),
   KEY `matieres_espece_unite_id_foreign` (`espece_unite_id`),
   KEY `matieres_categorie_id_foreign` (`categorie_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `matieres`
---
-
-INSERT INTO `matieres` (`id`, `designation`, `specification`, `dateAcquisition`, `prix`, `prixMinimal`, `prixMaximal`, `societeAchat`, `quantite`, `dateActualisation`, `dateSortie`, `numeroFolio`, `observation`, `etape`, `validate`, `reception_id`, `type_entree_id`, `table_amortissement_id`, `espece_unite_id`, `categorie_id`, `created_at`, `updated_at`) VALUES
-(1, 'Ordinateur HP', 'Portable - 1920*1024 - core i7eme 5gen', '2024-04-24', '0', 1250000, 2500000, '', 3, '2024-04-24 18:05:07', '2024-04-24', 1, '', 1, 0, 1, 0, 0, 0, 0, '2024-04-24 15:05:07', '2024-04-24 15:05:07'),
-(2, 'Moniteur Acer', NULL, '2024-04-24', '0', 500000, 650000, '', 7, '2024-04-24 18:05:07', '2024-04-24', 1, '', 1, 0, 1, 0, 0, 0, 0, '2024-04-24 15:05:07', '2024-04-24 15:05:07'),
-(3, 'Chaise roulante', 'Aucune specification', '2024-04-24', '0', 250000, 3000000, '', 25, '2024-04-24 21:16:45', '2024-04-24', 1, '', 1, 0, 2, 0, 0, 0, 0, '2024-04-24 18:16:45', '2024-04-24 18:16:45'),
-(4, 'Table de bureau', 'Aucune specification', '2024-04-24', '0', 1000000, 2000000, '', 2, '2024-04-24 21:16:45', '2024-04-24', 1, '', 1, 0, 2, 0, 0, 0, 0, '2024-04-24 18:16:45', '2024-04-24 18:16:45');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -378,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `migrations`
@@ -393,13 +419,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2024_03_25_103726_create_categorie_table', 1),
 (7, '2024_03_25_115824_create_etat_table', 1),
 (8, '2024_03_25_183255_create_employee_table', 1),
-(27, '2024_03_25_190411_create_matiere_table', 4),
+(9, '2024_03_25_190411_create_matiere_table', 1),
 (10, '2024_03_25_195632_create_deficit_table', 1),
 (11, '2024_03_25_200323_create_excedent_table', 1),
 (12, '2024_04_03_071612_create_demolition_table', 1),
 (13, '2024_04_03_072740_create_ordre_entree_table', 1),
 (14, '2024_04_03_075600_create_ordre_sortie_table', 1),
-(28, '2024_04_03_080225_create_reception_table', 5),
+(15, '2024_04_03_080225_create_reception_table', 1),
 (16, '2024_04_19_064800_create_taux_amortissements_table', 1),
 (17, '2024_04_19_065000_create_espece_unites_table', 1),
 (18, '2024_04_19_065238_create_fiche_detenteurs_table', 1),
@@ -486,15 +512,7 @@ CREATE TABLE IF NOT EXISTS `receptions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `receptions`
---
-
-INSERT INTO `receptions` (`id`, `referenceDAO`, `objet`, `nombreLot`, `created_at`, `updated_at`) VALUES
-(1, '04-22 FTM', 'Materiel informatique', 2, '2024-04-24 15:05:07', '2024-04-24 15:05:07'),
-(2, '04-24 FTM', 'Mobilier de bureau', 2, '2024-04-24 18:16:45', '2024-04-24 18:16:45');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -526,11 +544,12 @@ CREATE TABLE IF NOT EXISTS `table_amortissements` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `amortissementAnterieur` int NOT NULL,
   `dotationExercice` int NOT NULL,
+  `matiere_id` bigint UNSIGNED NOT NULL,
   `taux_amortissement_id` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `table_amortissements_taux_amortissement_id_foreign` (`taux_amortissement_id`)
+  KEY `table_amortissements_matiere_id_foreign` (`matiere_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -542,12 +561,35 @@ CREATE TABLE IF NOT EXISTS `table_amortissements` (
 DROP TABLE IF EXISTS `taux_amortissements`;
 CREATE TABLE IF NOT EXISTS `taux_amortissements` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `rubrique` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rubrique` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `taux` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `taux_amortissements`
+--
+
+INSERT INTO `taux_amortissements` (`id`, `rubrique`, `taux`, `created_at`, `updated_at`) VALUES
+(1, 'Equipements industriel', 10.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(2, 'Engins de levage', 20.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(3, 'Gros outillages de travaux publics', 0.33, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(4, 'Materiel informatique', 25.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(5, 'Materiel medical et de laboratoire', 10.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(6, 'Groupes electrogenes', 10.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(7, 'Transports terrestre touristiques affectes au transport public ou a la location', 0.33, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(8, 'Autre vehicules terrestres', 20.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(9, 'Cammionettes et fourgonnettes', 25.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(10, 'Camions', 25.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(11, 'Vehicule a deux roues', 25.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(12, 'Transport ferroviaire', 10.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(13, 'Transport fluvial', 10.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(14, 'Transport maritime', 15.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(15, 'Transport aerien', 15.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(16, 'Mobilier de bureau', 10.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19'),
+(17, 'Materiel de bureau', 20.00, '2024-04-19 06:10:19', '2024-04-19 06:10:19');
 
 -- --------------------------------------------------------
 
@@ -558,11 +600,20 @@ CREATE TABLE IF NOT EXISTS `taux_amortissements` (
 DROP TABLE IF EXISTS `type_entrees`;
 CREATE TABLE IF NOT EXISTS `type_entrees` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `typeEntree` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `typeEntree` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `type_entrees`
+--
+
+INSERT INTO `type_entrees` (`id`, `typeEntree`, `created_at`, `updated_at`) VALUES
+(1, 'Titre honnereux', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
+(2, 'Titre de don', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
+(3, 'Titre de transfert', '2024-04-19 08:26:38', '2024-04-19 08:26:38');
 
 -- --------------------------------------------------------
 
@@ -589,14 +640,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_employee_id_foreign` (`employee_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `last_name`, `pseudo`, `email`, `email_verified_at`, `password`, `matricule`, `poste`, `sigle`, `employee_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Rakotondramanantsoa', 'Nehemia', 'Nehemia', 'nehemiarakotondramanantsoa19@gmail.com', NULL, '$2y$12$xMOEIY2hna8mR5cPMwWvHumL7Zrw5pUEvds/aCCCuWiyFUE/yAHbe', 'admin1', 'Super admin', 'DAF', 84, 'iNAcT7DSEUHN6badC9DwVkanK7wP6xpZLhWVIRZTDGhaPET8pAO4dqt6fxn7', '2024-04-24 07:19:37', '2024-04-24 07:19:37');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

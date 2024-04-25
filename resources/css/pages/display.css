@@ -35,7 +35,7 @@
     margin: 7px 0;
 }
 .attente-section .display-content .step {
-    flex-basis: 1;
+    flex-grow: 1;
 }
 .attente-section .display-content .waiting-content {
     border-radius: var(--border-radius);

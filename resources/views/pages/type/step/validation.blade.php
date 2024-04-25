@@ -9,7 +9,7 @@
             <p><strong><u>Objet :</u></strong>{{ $matiere->reception->objet }}</p>
         </div>
         <div>
-            <input type="submit" value="VALIDER">
+            <input type="submit" value="VALIDER" {{ (Auth::user()->poste === "") }}>
         </div>
     </div>
     <div class="validation-item">

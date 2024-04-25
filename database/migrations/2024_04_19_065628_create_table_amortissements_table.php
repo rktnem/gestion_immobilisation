@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer("amortissementAnterieur");
             $table->integer("dotationExercice");
+            $table->foreignId("matiere_id")->constrained()->onDelete('cascade');
             $table->foreignId("taux_amortissement_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });

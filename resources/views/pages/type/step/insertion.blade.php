@@ -23,7 +23,7 @@
                 <label for="unite">Espèce unité</label>
                 <select name="unite" id="unite">
                     @foreach ($unites as $unite)
-                    <option value={{ $unite->idEspeceUnite }}>{{ $unite->typeUnite }}</option>
+                    <option value={{ $unite->id }}>{{ $unite->typeUnite }}</option>
                     @endforeach
                 </select>
             </div>
@@ -31,7 +31,7 @@
                 <label for="nomenclature">Nomenclature</label>
                 <select name="nomenclature" id="nomenclature">
                     @foreach ($classes as $classe)
-                    <option value={{ $classe->idCategorie }} {{ ($classe->classe === 'classe 2' ? 'selected' : '') }}
+                    <option value={{ $classe->id }} {{ ($classe->classe === 'classe 2' ? 'selected' : '') }}
                         >{{ $classe->classe }}</option>
                     @endforeach
                 </select>
@@ -40,7 +40,7 @@
                 <label for="">Mode d'acquisition</label>
                 <select name="typeEntree" id="typeEntree">
                     @foreach ($types as $type)
-                    <option value={{ $type->idTypeEntree }}>{{ $type->typeEntree }}</option>
+                    <option value={{ $type->id }}>{{ $type->typeEntree }}</option>
                     @endforeach
                 </select>
             </div>
@@ -48,7 +48,7 @@
                 <label for="rubrique">Rubrique</label>
                 <select name="rubrique" id="rubrique">
                     @foreach ($amortissements as $amortissement)
-                    <option value='{{ $amortissement->idTauxAmortissement }}''>{{ $amortissement->rubrique }}</option>
+                    <option value='{{ $amortissement->id }}'>{{ $amortissement->rubrique }}</option>
                     @endforeach
                 </select>
             </div>
@@ -68,8 +68,8 @@
             </div>
             <div class="form-group">
                 <label for="taux">Taux d' ammortissement</label>
-                        <input type="text" name="taux" id="taux" placeholder="Taux d'ammortissement... (en %/an)"
-                            style="width: 75px">
+                <input type="text" name="taux" id="taux" placeholder="Taux d'ammortissement... (en %/an)"
+                    style="width: 75px">
             </div>
             <div class="form-group">
                 <label for="observation">Observation</label>
