@@ -13,6 +13,7 @@ class Matiere extends Model
 
     protected $fillable = [
         'designation',
+        'specification',
         'dateAcquisition',
         'prix',
         'prixMinimal',
@@ -38,6 +39,6 @@ class Matiere extends Model
      */
     public function reception()
     {
-        return $this->belongsTo(Reception::class);
+        return $this->belongsTo(Reception::class, 'reception_id');
     }
 }

@@ -1,4 +1,4 @@
-<form action={{ route('newInsert.save') }} method="POST" class="insertion-part">
+<form action={{ route('matiere.store') }} method="POST" class="insertion-part">
     @csrf
     <div class="detail-matiere">
         <h3>Lot n°1: Ordinateur portable</h3>

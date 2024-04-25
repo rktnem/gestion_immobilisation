@@ -60,19 +60,19 @@ function formGroup(lot) {
         lot +
         "' id='' placeholder='Designation du lot n°" +
         lot +
-        "...'>" +
+        "...' required>" +
         "<input type='text' name='specification-" +
         lot +
         "' id='' placeholder='Spécification technique...'>" +
         "<input type='number' name='prix-minimal-" +
         lot +
-        "' id='' placeholder='Prix minimal en TTC...'>" +
+        "' id='' placeholder='Prix minimal en TTC...'  required>" +
         "<input type='number' name='prix-maximal-" +
         lot +
-        "' id='' placeholder='Prix maximal en TTC...'>" +
+        "' id='' placeholder='Prix maximal en TTC...'  required>" +
         "<input type='number' name='quantite-" +
         lot +
-        "' id='' style='width: 75px' placeholder='Qté...'>" +
+        "' id='' style='width: 75px' placeholder='Qté...'  required>" +
         "" +
         "</div>" +
         "</div>"

@@ -1,5 +1,5 @@
 <h3>Validation du PV de reception <span class="info-validation">{{ $matiere->validate }}/3</span></h3>
-<form class="validation-list" action={{ route('matiere.create') }} method="GET">
+<form class="validation-list" action={{ route('validate.store') }} method="POST">
     @csrf
     <input type="hidden" name="number" value={{ $number }}>
     <input type="hidden" name="last_insert" value={{ $last_insert }}>

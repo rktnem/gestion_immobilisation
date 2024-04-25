@@ -93,10 +93,25 @@ class MatiereController extends Controller
     }
 
     public function storeValidate(Request $request) {
-        
+        $matiere = Matiere::find($request->last_insert);
+
+        $matiere->validate += 1;
+        $matiere->save();
+
+        if($matiere->validate >= 3) {
+            $matiere->etape = 2;
+            $matiere->save();
+
+            return to_route('matiere.create', [
+                'last_insert' => $matiere->id,
+            ]);
+        }
+        else {
+            return redirect()->back();
+        }
     }
 
-    public function showInsert(Request $request) {
+    public function createMatiere(Request $request) {
         $amortissements = TauxAmortissement::all();
         $classes = Categorie::all();
         $types = TypeEntree::all();
@@ -115,7 +130,7 @@ class MatiereController extends Controller
         ]);
     }
 
-    public function saveMatiere(Request $request) {
+    public function storeMatiere(Request $request) {
         $number = $request->number;
 
         $number = $number - 1;
@@ -149,8 +164,14 @@ class MatiereController extends Controller
         return view('pages/inventaire/journal');
     }
 
-    public function showAttente() {
-        return view('pages/inventaire/attente');
+    public function showWaiting() {
+        $matieres_first = Matiere::where('etape', 1)->get();
+        $matieres_second = Matiere::where('etape', 2)->get();
+
+        return view('pages/inventaire/attente', [
+            'matieres_first' => $matieres_first,
+            'matieres_second' => $matieres_second,
+        ]);
     }
 
     // Fin des fonctions controller pour l'INVENTAIRE

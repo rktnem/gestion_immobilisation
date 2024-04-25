@@ -171,8 +171,8 @@ section::-webkit-scrollbar-thumb {
 }
 /* Pour les badges */
 .badge {
-    background-color: var(--second);
-    padding: 5px;
+    background-color: rgb(208, 5, 5);
+    padding: 5px 8px;
     border-radius: 50%;
 }
 /* Fin de la definition */

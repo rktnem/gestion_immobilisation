@@ -34,10 +34,11 @@ Route::middleware(['auth'])->group(function () {
         
         // Routes de la section inventaire
         Route::middleware('is.depositaire.comptable')->group(function () {
-            Route::get('/inventaire/Liste des matiere', 'showInventaire')->name('inventaire.show');
-            Route::get('/inventaire/Liste des matiere/{id}', 'detailMatiere')->name('inventaire.detail');
-            Route::get('/inventaire/Journal', 'showJournal')->name('inventaire.journal');
-            Route::get('/inventaire/Grand-Livre', 'showLivre')->name('inventaire.grandlivre');
+            Route::get('/inventaire/liste des matiere', 'showInventaire')->name('inventaire.show');
+            Route::get('/inventaire/liste des matiere/{id}', 'detailMatiere')->name('inventaire.detail');
+            Route::get('/inventaire/journal', 'showJournal')->name('inventaire.journal');
+            Route::get('/inventaire/grand-Livre', 'showLivre')->name('inventaire.grandlivre');
+            Route::get('/inventaire/en-attente', 'showWaiting')->name('inventaire.wait');
         });
         
         // Routes de la section financier

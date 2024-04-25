@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 $route = Route::current()->getName();
 $uri = Route::current()->uri();
 
-$matieres = Matiere::where('etape', 1)->get();
+// $matieres = Matiere::where('etape', 1)->get();
 @endphp
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@ $matieres = Matiere::where('etape', 1)->get();
             <x-navbar :route="$route" :uri="$uri" />
             @yield('content')
         </div>
-        <div class="waiting">
+        {{-- <div class="waiting">
             <div class="waiting-container">
                 <div class="waiting-header">
                     <h3>En attente de validation...</h3>
@@ -62,19 +62,19 @@ $matieres = Matiere::where('etape', 1)->get();
                     @foreach ($matieres as $matiere)
                     <div class="waiting-box" onclick="window.location.href='{{ route('validate.show', ['id' => 1]) }}'">
                         <h4>Validation du PV de reception</h4>
-                        <p><strong>Convention N°:</strong> {{ $matiere->reception->referenceDAO }}</p>
-                        <p><strong>Objet:</strong> Acquisition et reception de {{ $matiere->reception->objet }} repartit
+                        <p><strong>Convention N°:</strong></p>
+                        <p><strong>Objet:</strong> Acquisition et reception derepartit
                             en deux
                             lot
                         </p>
-                        <p><strong>Declaré le:</strong> {{
-                            Carbon::parse($matiere->reception->created_at)->format('d M. Y') }}
+                        <p><strong>Declaré le:</strong>
+
                         </p>
                     </div>
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="to-top">
             <a href="#navbar">&uarr;</a>
         </div>
