@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Matiere;
+use App\Models\Employee;
 use App\Models\Categorie;
 use App\Models\Reception;
 use App\Models\TypeEntree;
@@ -69,6 +70,7 @@ class MatiereController extends Controller
         if($matiere && $reception) {
             return to_route('validate.show', [
                 'number' => $number,
+                'last_insert' => $matiere->id,
             ]);
         }
         else {
@@ -77,11 +79,21 @@ class MatiereController extends Controller
     }
 
     public function showValidate(Request $request) {
+        $last_insert = $request->get('last_insert');
+        
+        $matiere = Matiere::findorFail($last_insert);
+
         return view('pages/newInsert', [
             'type' => 'achat',
             "number" => $request->get('number'),
+            "last_insert" => $last_insert,
+            "matiere" => $matiere,
             "step" => "validation",
         ]);
+    }
+
+    public function storeValidate(Request $request) {
+        
     }
 
     public function showInsert(Request $request) {

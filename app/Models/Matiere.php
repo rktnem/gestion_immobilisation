@@ -13,7 +13,6 @@ class Matiere extends Model
 
     protected $fillable = [
         'designation',
-        'specification',
         'dateAcquisition',
         'prix',
         'prixMinimal',

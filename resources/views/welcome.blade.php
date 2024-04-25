@@ -15,12 +15,14 @@
             De nouveaux immobilisations, selectioner
             le mode d'acquisition de celui-ci
         </p>
-        <select name="typeEntree" id="typeEntree">
-            <option value="achat">Titre honnereux</option>
-            <option value="don">Titre de don</option>
-            <option value="transfert">Titre de transfert</option>
-        </select>
-        <a id="to_reception" href={{ route('reception.create', ['type'=> 'don']) }}>INSCRIRE</a>
+        <div>
+            <select name="typeEntree" id="typeEntree">
+                <option value="achat">Titre honnereux</option>
+                <option value="don">Titre de don</option>
+                <option value="transfert">Titre de transfert</option>
+            </select>
+            <a class="submit" id="to_reception" href={{ route('reception.create', ['type'=> 'achat']) }}>INSCRIRE</a>
+        </div>
     </div>
     <div class="menu-section">
         <ul>
@@ -85,7 +87,6 @@
     let type = document.getElementById('typeEntree');
 
     type.addEventListener('change', () => {
-        let txt = "akoho ':type'"
         let val = type.value;
         let href;
 

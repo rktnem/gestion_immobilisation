@@ -17,9 +17,12 @@
 .main-fonction > p {
     margin-top: 50px;
 }
-.main-fonction form {
+.main-fonction > div {
     text-align: center;
     margin: 50px 0 20px 0;
+}
+.main-fonction > div > .submit {
+    color: white;
 }
 .main-fonction form select {
     margin-right: 15px;

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->smallInteger("numeroFolio");
             $table->text("observation");
             $table->smallInteger('etape');
+            $table->smallInteger('validate')->default(0);
             $table->foreignId("reception_id")->constrained()->onDelete("cascade");
             $table->foreignId("type_entree_id")->constrained()->onDelete('cascade');
             $table->foreignId("table_amortissement_id")->constrained()->onDelete('cascade');
