@@ -40,7 +40,7 @@ use Carbon\Carbon;
             <h4>Insertion des matieres</h4>
             @foreach ($matieres_second as $second)
             <div class="waiting-content">
-                <a class="waiting-box" href={{ route('matiere.create', ['last_insert'=> $second->id]) }}>
+                <a class="waiting-box" href={{ route('matiere.create', ['last_insert'=> $second->id, 'number' => $second->reception->nombreLot]) }}>
                     <p><strong>Designation:</strong> {{ $second->designation }}</p>
                     <p><strong>Convention N°:</strong> {{ $second->reception->objet }}</p>
                     <p><strong>Objet:</strong> Acquisition et reception de materiel informatique repartit

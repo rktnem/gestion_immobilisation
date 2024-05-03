@@ -35,7 +35,8 @@ class AuthServiceProvider extends ServiceProvider
                     'Directeur du DRPI',
                     'Directeur générale',
                     'Depositaire comptable',
-                    'Super admin'
+                    'Super admin',
+                    "Agent de l'UGPM",
                 ];
             $allowed = in_array($user->poste, $allow);
 

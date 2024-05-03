@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'is.director.general' => \App\Http\Middleware\IsDirectorGeneral::class,
         'is.depositaire.comptable' => \App\Http\Middleware\IsDepositaireComptable::class,
         'is.finance' => \App\Http\Middleware\IsFinance::class,
+        'role' => \App\Http\Middleware\EnsureUserHasJob::class,
     ];
 }

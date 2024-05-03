@@ -26,14 +26,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reception', 'createReception')->name('reception.create')->middleware('is.person.public');
         Route::post('/reception', 'storeReception')->name('reception.store')->middleware('is.person.public');
 
-        Route::get('/achat/validation', 'showValidate')->name('validate.show')->middleware(['is.person.public', 'is.depositaire.comptable']);
-        Route::post('/achat/validation', 'storeValidate')->name('validate.store')->middleware(['is.person.public','is.depositaire.comptable']);
+        Route::get('/achat/validation', 'showValidate')->name('validate.show')->middleware("role:Depositaire comptable;Personne responsables des marchés publiques;Directeur générale;Agent de l'UGPM");
+        Route::post('/achat/validation', 'storeValidate')->name('validate.store')->middleware("role:Depositaire comptable;Personne responsables des marchés publiques;Directeur générale;Agent de l'UGPM");
 
         Route::get('/achat/insertion', 'createMatiere')->name('matiere.create')->middleware('is.depositaire.comptable');
         Route::post('/achat/insertion', 'storeMatiere')->name('matiere.store')->middleware('is.depositaire.comptable');
         
         // Routes de la section inventaire
-        Route::middleware('is.depositaire.comptable')->group(function () {
+        Route::middleware("role:Depositaire comptable;Personne responsables des marchés publiques;Directeur générale;Agent de l'UGPM")->group(function () {
             Route::get('/inventaire/liste des matiere', 'showInventaire')->name('inventaire.show');
             Route::get('/inventaire/liste des matiere/{id}', 'detailMatiere')->name('inventaire.detail');
             Route::get('/inventaire/journal', 'showJournal')->name('inventaire.journal');
