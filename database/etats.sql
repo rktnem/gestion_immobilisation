@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `etats`;
 CREATE TABLE IF NOT EXISTS `etats` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `typeEtat` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `typeEtat` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -44,7 +44,7 @@ INSERT INTO `etats` (`id`, `typeEtat`, `created_at`, `updated_at`) VALUES
 (1, 'Neuf', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
 (2, 'Bon', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
 (3, 'Abimé', '2024-04-19 08:26:38', '2024-04-19 08:26:38'),
-(4, 'Hors d\'usa', '2024-04-19 08:26:38', '2024-04-19 08:26:38');
+(4, 'Hors d\'usage', '2024-04-19 08:26:38', '2024-04-19 08:26:38');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

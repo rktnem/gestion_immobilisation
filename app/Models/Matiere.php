@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Models\Reception;
+use App\Models\TypeEntree;
+use App\Models\EspeceUnite;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -36,12 +38,32 @@ class Matiere extends Model
     ];
 
     /**
+     * Get the typeEntree that owns the Matiere
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function typeEntree()
+    {
+        return $this->belongsTo(TypeEntree::class);
+    }
+
+    /**
+     * Get the especeUnite that owns the Matiere
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function especeUnite()
+    {
+        return $this->belongsTo(EspeceUnite::class);
+    }
+
+    /**
      * Get the reception that owns the Matiere
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function reception()
     {
-        return $this->belongsTo(Reception::class, 'reception_id');
+        return $this->belongsTo(Reception::class);
     }
 }

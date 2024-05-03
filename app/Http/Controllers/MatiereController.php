@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Etat;
 use App\Models\Matiere;
 use App\Models\Employee;
 use App\Models\Categorie;
 use App\Models\Reception;
 use App\Models\TypeEntree;
 use App\Models\EspeceUnite;
+use App\Models\SousMatiere;
 use Illuminate\Http\Request;
+use App\Models\FicheDetenteur;
 use App\Models\TauxAmortissement;
+use App\Models\TableAmortissement;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -85,6 +89,9 @@ class MatiereController extends Controller
         $last_insert = $request->get('last_insert');
         
         $matiere = Matiere::findorFail($last_insert);
+        $prmp = Employee::where('poste', "Personne responsables des marchés publiques")->first();
+        $gac = Employee::where('poste', "Directeur générale")->first();
+        $dcm = Employee::where('poste', "Depositaire comptable")->first();
 
         return view('pages/newInsert', [
             'type' => 'achat',
@@ -92,6 +99,9 @@ class MatiereController extends Controller
             "last_insert" => $last_insert,
             "matiere" => $matiere,
             "step" => "validation",
+            "prmp" => $prmp,
+            "gac" => $gac,
+            "dcm" => $dcm,
         ]);
     }
 
@@ -109,9 +119,8 @@ class MatiereController extends Controller
                 'last_insert' => $matiere->id,
             ]);
         }
-        else {
-            return redirect()->back();
-        }
+
+        return to_route('home');
     }
 
     public function createMatiere(Request $request) {
@@ -119,6 +128,9 @@ class MatiereController extends Controller
         $classes = Categorie::all();
         $types = TypeEntree::all();
         $unites = EspeceUnite::all();
+        $matiere = Matiere::find($request->last_insert);
+        $etats = Etat::all();
+        $employees = Employee::all();
 
         $number = $request->number;
 
@@ -130,24 +142,57 @@ class MatiereController extends Controller
                 "classes" => $classes,
                 'types' => $types,
                 'unites' => $unites,
+                'matiere' => $matiere,
+                'etats' => $etats,
+                'employees' => $employees,
+                'id' => $request->get('last_insert'),
         ]);
     }
 
     public function storeMatiere(Request $request) {
-        $number = $request->number;
+        // insertion dans la table matiere
+        $matiere = Matiere::find($request->id)
+                    ->update([
+                        'prix' => $request->price,
+                        'societeAchat' => $request->fournisseur,
+                        'facture' => $request->facture,
+                        'bonLivraison' => $request->bonLivraison,
+                        'observation' => $request->observation,
+                        'etape' => 3,
+                        'type_entree_id' => $request->typeEntree,
+                        'taux_amortissement_id' => $request->rubrique,
+                        'espece_unite_id' => $request->unite,
+                        'categorie_id' => $request->nomenclature,
+        ]);
 
-        $number = $number - 1;
+        // insertion dans la table table_amortissement
+        $table = TableAmortissement::create([
+            'amortissementAnterieur' => 0,
+            'dotationExercice' => dotationExercice($request->price, $request->taux),
+            'matiere_id' => $request->id,
+            'taux_amortissement_id' => $request->rubrique,
+        ]);
 
-        if($number != 0) {
+        // insertion dans la table pivot et la table sous_matiere
+        for ($i = 1; $i <= $request->nombre_detenteur; $i++) {
+            $id_emp = "id-$i";
+            $quantite = "quantite-$i";
+            $etat = "etat-$i";
 
-            return redirect()->route('newInsert.insert', [
-                'type' => 'achat',
-                'number' => $number,
+            $sous_matiere = SousMatiere::create([
+                'quantite' => $request->$quantite,
+                'etat_id' => $request->$etat,
+                'matiere_id' => $request->id
+            ]);
+
+            $fiche_detenteur = FicheDetenteur::create([
+                'employee_id' => $request->$id_emp,
+                'sous_matiere_id' => $sous_matiere->id
             ]);
         }
-        else {
-            return redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
-        }
+
+        return redirect()->route('home')->with("success","Nouveau matiére inclus dans la comptabilité matiere du FTM");
+        
     }
 
     // Fin des fonctions controller pour l'INSERTION
@@ -156,7 +201,11 @@ class MatiereController extends Controller
     // Les fonctions controller pour l'INVENTAIRE des matieres
 
     public function showInventaire() {
-        return view('pages/displayImmo');
+        $matieres = Matiere::all();
+
+        return view('pages/displayImmo', [
+            'matieres' => $matieres
+        ]);
     }
 
     public function detailMatiere(int $id) {

@@ -84,6 +84,10 @@ button:hover,
 .submit:hover {
     background-color: var(--second-hover);
 }
+input[type="submit"]:disabled,
+button:disabled {
+    background-color: var(--second-hover);
+}
 
 table {
     border-collapse: collapse;

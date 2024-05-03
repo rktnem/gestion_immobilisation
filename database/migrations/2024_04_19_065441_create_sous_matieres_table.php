@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sous_matieres', function (Blueprint $table) {
             $table->id();
-            $table->date("datePriseEnCharge");
+            $table->smallInteger('quantite');
             $table->foreignId("etat_id")->constrained()->onDelete('cascade');
             $table->foreignId("matiere_id")->constrained()->onDelete('cascade');
             $table->timestamps();

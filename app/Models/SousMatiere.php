@@ -9,5 +9,5 @@ class SousMatiere extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['datePriseEnCharge'];
+    protected $fillable = ['quantite', 'etat_id', 'matiere_id'];
 }

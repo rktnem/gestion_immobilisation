@@ -9,5 +9,5 @@ class TableAmortissement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['amortissementAnterieur', 'dotationExercice'];
+    protected $fillable = ['amortissementAnterieur', 'dotationExercice', 'matiere_id', 'taux_amortissement_id'];
 }

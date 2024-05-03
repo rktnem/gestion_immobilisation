@@ -96,23 +96,50 @@ number.on("keypress", (e) => {
 
 let btnDetenteur = $(".detail-detenteur .detenteur-form button");
 let detenteurTable = $(".detail-detenteur .detenteur-form");
+let nombreDetenteur = $("#nombre_detenteur");
 let ref = 2;
 
 function formDetenteur(lot) {
-    return (
-        '<div class="detenteur-input"><input type="text" name="matricule-' +
+    let etat = ["Neuf", "Bon", "Abimé", "Hors d'usage"];
+
+    let optionEtat =
+        '<div class="detenteur-input">' +
+        '<input type="hidden" name="id-' +
         lot +
-        '" id="" required><input type="text" name="nom-detenteur-' +
+        '" class="index">' +
+        '<input type="text" name="matricule-' +
         lot +
-        '" id="" required><input type="text" name="quantite-' +
+        '" class="matricule" id="matricule-' +
         lot +
-        '" id="" required><input type="text" name="etat-' +
+        '" required>' +
+        '<input type="text" name="nom-detenteur-' +
         lot +
-        '" id="" required></div>'
-    );
+        '" class="nom-detenteur" id="nom-detenteur-' +
+        lot +
+        '" required>' +
+        '<input type="text" name="quantite-' +
+        lot +
+        '" id="quantite-' +
+        lot +
+        '" required>' +
+        '<select name="etat-' +
+        lot +
+        '" id="etat-' +
+        lot +
+        '">';
+
+    for (let i = 0; i < etat.length; i++) {
+        optionEtat += `<option value=${i + 1}>${etat[i]}</option>`;
+    }
+
+    optionEtat += "</select></div>";
+
+    return optionEtat;
 }
 
 btnDetenteur.on("click", (e) => {
+    nombreDetenteur.val(parseInt(nombreDetenteur.val()) + 1);
+
     e.preventDefault();
     detenteurTable.append(formDetenteur(ref));
     ref += 1;

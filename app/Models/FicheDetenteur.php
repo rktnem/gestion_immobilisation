@@ -9,5 +9,5 @@ class FicheDetenteur extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['quantite'];
+    protected $fillable = ['employee_id', 'sous_matiere_id'];
 }

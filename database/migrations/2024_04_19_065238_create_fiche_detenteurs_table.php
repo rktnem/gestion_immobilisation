@@ -14,7 +14,6 @@ return new class extends Migration
     {
         Schema::create('fiche_detenteurs', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger("quantite");
             $table->foreignId("employee_id")->constrained()->onDelete('cascade');
             $table->foreignId("sous_matiere_id")->constrained()->onDelete('cascade');
             $table->timestamps();

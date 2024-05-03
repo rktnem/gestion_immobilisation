@@ -39,4 +39,5 @@ return array(
     '320163ac6b93aebe3dc25b60a0533d56' => $vendorDir . '/spatie/laravel-ignition/src/helpers.php',
     '8014502edbb83c3d193ea69af13c6f06' => $baseDir . '/resources/helpers/is_route.php',
     'd3eb16804588287cb1c7c5e4d103f438' => $baseDir . '/resources/helpers/format_prix.php',
+    'e5155e0e83fd58561019ff233026442a' => $baseDir . '/resources/helpers/comptabilite.php',
 );
