@@ -108,16 +108,15 @@ class MatiereController extends Controller
     public function storeValidate(Request $request) {
         $matiere = Matiere::find($request->last_insert);
 
-        $matiere->validate += $request->validate;
+        $matiere->validate += 1;
         $matiere->save();
 
-        if($matiere->validate === 1111) {
+        if($matiere->validate >= 3) {
             $matiere->etape = 2;
             $matiere->save();
 
             return to_route('matiere.create', [
                 'last_insert' => $matiere->id,
-                'number' => $matiere->reception->nombreLot,
             ]);
         }
 
@@ -125,7 +124,6 @@ class MatiereController extends Controller
     }
 
     public function createMatiere(Request $request) {
-        $matiere = Matiere::find($request->last_insert);
         $amortissements = TauxAmortissement::all();
         $classes = Categorie::all();
         $types = TypeEntree::all();
