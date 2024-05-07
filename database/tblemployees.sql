@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `email` varchar(200) NOT NULL,
   `genre` varchar(100) NOT NULL,
   `poste` varchar(255) NOT NULL,
-  `idDepartement` varchar(200) NOT NULL,
+  `departement_id` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
 -- Déchargement des données de la table `tblemployees`
 --
 
-INSERT INTO `employees` (`id`, `matricule`, `nom`, `prenom`, `email`, `genre`, `poste`, `idDepartement`) VALUES
+INSERT INTO `employees` (`id`, `matricule`, `nom`, `prenom`, `email`, `genre`, `poste`, `departement_id`) VALUES
 (1, '335546', 'RANDRIAMANANA', 'Malala Fidèle', 'malala@gmail.com', 'Male', 'Directeur du DRPI', 4),
 (2, '318831', 'SOAMIAFARA ', 'Valivonintsoa', 'valivonintsoa@gmail.com', 'Female', 'Secretaire du DRPI', 4),
 (3,'255335','RAZANAHARIMAVO','Lalao','lalao@gmail.com','Female','Chef de service bureau des ventes', 4),
