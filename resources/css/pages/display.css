@@ -34,6 +34,11 @@
     font-size: 14px;
     margin: 7px 0;
 }
+.attente-section .display-content li.lot {
+    font-size: 14px;
+    list-style-type: disc;
+    text-indent: 15px;
+}
 .attente-section .display-content .step {
     flex-grow: 1;
 }

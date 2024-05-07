@@ -201,7 +201,7 @@ class MatiereController extends Controller
     // Les fonctions controller pour l'INVENTAIRE des matieres
 
     public function showInventaire() {
-        $matieres = Matiere::all();
+        $matieres = Matiere::where('etape', '3')->get();
 
         return view('pages/displayImmo', [
             'matieres' => $matieres
@@ -209,7 +209,14 @@ class MatiereController extends Controller
     }
 
     public function detailMatiere(int $id) {
-        return view('pages/inventaire/showDetail' , ["id" => $id]);
+        $matiere = Matiere::find($id);
+        $sous_matieres = SousMatiere::where('matiere_id', $id)->get();
+
+        return view('pages/inventaire/showDetail' , [
+            "id" => $id,
+            'matiere' => $matiere,
+            'sous_matieres' => $sous_matieres
+        ]);
     }
 
     public function showJournal() {
@@ -219,10 +226,12 @@ class MatiereController extends Controller
     public function showWaiting() {
         $matieres_first = Matiere::where('etape', 1)->get();
         $matieres_second = Matiere::where('etape', 2)->get();
+        $receptions = Reception::all();
 
         return view('pages/inventaire/attente', [
             'matieres_first' => $matieres_first,
             'matieres_second' => $matieres_second,
+            'receptions' => $receptions
         ]);
     }
 

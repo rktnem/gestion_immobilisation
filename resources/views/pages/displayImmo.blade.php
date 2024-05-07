@@ -42,7 +42,7 @@ use Illuminate\Support\Number;
                 <td>{{ Number::format($matiere->prix, precision:'2', locale:'de') }} Ar</td>
                 <td>{{ Number::format(($matiere->prix * $matiere->quantite), precision:'2', locale:'de') }} Ar</td>
                 <td>{{ $matiere->typeEntree->typeEntree }}</td>
-                <td>{{ Carbon::parse($matiere->create_at)->format('d-M-Y') }}</td>
+                <td>{{ Carbon::parse($matiere->created_at)->format('d-M-Y') }}</td>
             </tr>
             @endforeach
         </table>

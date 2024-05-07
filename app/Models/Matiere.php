@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Categorie;
 use App\Models\Reception;
 use App\Models\TypeEntree;
 use App\Models\EspeceUnite;
+use App\Models\TauxAmortissement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -55,6 +57,26 @@ class Matiere extends Model
     public function especeUnite()
     {
         return $this->belongsTo(EspeceUnite::class);
+    }
+
+    /**
+     * Get the categorie that owns the Matiere
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
+
+    /**
+     * Get the tauxAmortissement that owns the Matiere
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function tauxAmortissement()
+    {
+        return $this->belongsTo(TauxAmortissement::class);
     }
 
     /**

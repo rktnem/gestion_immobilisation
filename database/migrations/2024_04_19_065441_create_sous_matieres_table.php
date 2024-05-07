@@ -16,6 +16,7 @@ return new class extends Migration
             $table->smallInteger('quantite');
             $table->foreignId("etat_id")->constrained()->onDelete('cascade');
             $table->foreignId("matiere_id")->constrained()->onDelete('cascade');
+            $table->foreignId("employee_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

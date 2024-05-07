@@ -20,12 +20,14 @@ use Carbon\Carbon;
     <div class="display-content">
         <div class="first-step step">
             <h4>Validation du pv de reception</h4>
+
             @foreach ($matieres_first as $first)
             <div class="waiting-content">
                 <a class="waiting-box" href={{ route('validate.show', ['last_insert'=> $first->id]) }}>
                     <p><strong>Designation:</strong> {{ $first->designation }} - {{$first->specification}}</p>
                     <p><strong>Convention N°:</strong> {{ $first->reception->referenceDAO }}</p>
                     <p><strong>Objet:</strong> {{ $first->reception->objet }} </p>
+                    <li class="lot"><strong>Lot:</strong> {{ $first->designation }} - {{ $first->specification }}</li>
                     <p>
                         <strong>Declaré le:</strong>
                         {{ Carbon::parse($first->reception->created_at)->format('d M. Y') }} -
@@ -34,18 +36,22 @@ use Carbon\Carbon;
                 </a>
             </div>
             @endforeach
+
             @if ($matieres_first->count() < 1) <p>Aucun resultat</p> @endif
         </div>
         <div class="second-step step">
             <h4>Insertion des matieres</h4>
+
             @foreach ($matieres_second as $second)
             <div class="waiting-content">
-                <a class="waiting-box" href={{ route('matiere.create', ['last_insert'=> $second->id, 'number' => $second->reception->nombreLot]) }}>
+                <a class="waiting-box" href={{ route('matiere.create', ['last_insert'=> $second->id, 'number' =>
+                    $second->reception->nombreLot]) }}>
                     <p><strong>Designation:</strong> {{ $second->designation }}</p>
                     <p><strong>Convention N°:</strong> {{ $second->reception->objet }}</p>
                     <p><strong>Objet:</strong> Acquisition et reception de materiel informatique repartit
                         en deux lot
                     </p>
+                    <li class="lot"><strong>Lot:</strong> {{ $second->designation }} - {{ $second->specification }}</li>
                     <p>
                         <strong>Declaré le:</strong>
                         {{ Carbon::parse($second->reception->created_at)->format('d M. Y') }} -
@@ -54,6 +60,7 @@ use Carbon\Carbon;
                 </a>
             </div>
             @endforeach
+
             @if ($matieres_second->count() < 1) <p>Aucun resultat</p> @endif
         </div>
 
