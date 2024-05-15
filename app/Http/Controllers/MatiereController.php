@@ -240,7 +240,11 @@ class MatiereController extends Controller
     // Les fonctions controller pour l'ETAT FINANCIER
 
     public function displayAmmortissement() {
-        return view('pages/displayAmmortissement');
+        $tauxAmortissements = TauxAmortissement::all();
+
+        return view('pages/displayAmmortissement', [
+            'tauxAmortissements' => $tauxAmortissements,
+        ]);
     }
 
     // Fin des fonctions controller pour l'ETAT FINANCIER
